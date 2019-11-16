@@ -1,0 +1,12 @@
+C:\Users\Giessrigl\source\repos\Lottery_Simulator_2\Lottery_Simulator_2\obj\Debug\Lottery_Simulator_2.csprojAssemblyReference.cache
+C:\Users\Giessrigl\source\repos\Lottery_Simulator_2\Lottery_Simulator_2\bin\Debug\Lottery_Simulator_2.exe.config
+C:\Users\Giessrigl\source\repos\Lottery_Simulator_2\Lottery_Simulator_2\bin\Debug\Lottery_Simulator_2.exe
+C:\Users\Giessrigl\source\repos\Lottery_Simulator_2\Lottery_Simulator_2\bin\Debug\Lottery_Simulator_2.pdb
+C:\Users\Giessrigl\source\repos\Lottery_Simulator_2\Lottery_Simulator_2\obj\Debug\Lottery_Simulator_2.exe
+C:\Users\Giessrigl\source\repos\Lottery_Simulator_2\Lottery_Simulator_2\obj\Debug\Lottery_Simulator_2.pdb
+C:\Users\Giessrigl\Documents\BIT #19 - 1 Semester\GL Programmierung\Lottery_Simulator_2\Lottery_Simulator_2\obj\Debug\Lottery_Simulator_2.csprojAssemblyReference.cache
+C:\Users\Giessrigl\Documents\BIT #19 - 1 Semester\GL Programmierung\Lottery_Simulator_2\Lottery_Simulator_2\obj\Debug\Lottery_Simulator_2.exe
+C:\Users\Giessrigl\Documents\BIT #19 - 1 Semester\GL Programmierung\Lottery_Simulator_2\Lottery_Simulator_2\obj\Debug\Lottery_Simulator_2.pdb
+C:\Users\Giessrigl\Documents\BIT #19 - 1 Semester\GL Programmierung\Lottery_Simulator_2\Lottery_Simulator_2\bin\Debug\Lottery_Simulator_2.exe.config
+C:\Users\Giessrigl\Documents\BIT #19 - 1 Semester\GL Programmierung\Lottery_Simulator_2\Lottery_Simulator_2\bin\Debug\Lottery_Simulator_2.exe
+C:\Users\Giessrigl\Documents\BIT #19 - 1 Semester\GL Programmierung\Lottery_Simulator_2\Lottery_Simulator_2\bin\Debug\Lottery_Simulator_2.pdb

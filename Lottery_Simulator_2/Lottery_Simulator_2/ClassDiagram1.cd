@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Lottery_Simulator_2.CheckKeyInput" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAABACAAAAAAAAAA=</HashCode>
+      <FileName>CheckKeyInput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lottery_Simulator_2.CheckUserInput" Collapsed="true">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACAAAAAAAEAAAAAAgAAAAAAAAABAAAAQgAA=</HashCode>
+      <FileName>CheckUserInput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lottery_Simulator_2.DetermineFrequencies" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DetermineFrequencies.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lottery_Simulator_2.ExitApp" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ExitApp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lottery_Simulator_2.GenerateUniqueRandomNumbers" Collapsed="true">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAQAAEAAAAA=</HashCode>
+      <FileName>GenerateUniqueRandomNumbers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lottery_Simulator_2.GraphicalTip" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAIUAAADAAEAAACAAAAAACAAAAAAAQCA=</HashCode>
+      <FileName>GraphicalTip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lottery_Simulator_2.JackpotSimulation" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>JackpotSimulation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lottery_Simulator_2.Lottery" Collapsed="true">
+    <Position X="14.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAIQCAQQAABAAAgBgAAAAAQAA=</HashCode>
+      <FileName>Lottery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lottery_Simulator_2.ManualTip" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ManualTip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lottery_Simulator_2.MenuAdmin" Collapsed="true">
+    <Position X="16" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MenuAdmin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lottery_Simulator_2.MenuOption" Collapsed="true">
+    <Position X="17.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MenuOption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lottery_Simulator_2.Mode" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAACEQAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lottery_Simulator_2.ModeAdmin" Collapsed="true">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ModeAdmin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lottery_Simulator_2.Program" Collapsed="true">
+    <Position X="16" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lottery_Simulator_2.QuickTip" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>QuickTip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lottery_Simulator_2.Renderer" Collapsed="true">
+    <Position X="17.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAABgAAAAAAQAAAAABAEIAAAAIAICAAhBAAAAABIIAA=</HashCode>
+      <FileName>Renderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
