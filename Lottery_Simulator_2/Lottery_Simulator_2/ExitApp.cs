@@ -32,11 +32,11 @@ namespace Lottery_Simulator_2
         /// </summary>
         public override void Execute()
         {
-            this.Lotto.Render.SetConsoleSettings();
+            this.Lotto.Render.SetConsoleSettings(92, 35);
             this.Lotto.Render.DisplayHeader(this.Title);
             this.Lotto.Render.DisplayExitRequest();
 
-            if (this.Lotto.KeyChecker.YesNo())
+            if (this.Lotto.KeyChecker.WaitForYesNo())
             {
                 Environment.Exit(0);
             }

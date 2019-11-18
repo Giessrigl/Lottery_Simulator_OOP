@@ -35,7 +35,7 @@ namespace Lottery_Simulator_2
         {
             const int MaxIterations = 1000;
 
-            this.Lotto.Render.SetConsoleSettings();
+            this.Lotto.Render.SetConsoleSettings(92, 35);
             this.Lotto.Render.DisplayHeader(this.Title);
 
             int stopatline = Console.WindowHeight - 5;
@@ -50,6 +50,13 @@ namespace Lottery_Simulator_2
 
                 string input = this.Lotto.Render.DisplayIterationsRequest(lineCount);
                 lineCount++;
+
+                if (input.Length >= int.MaxValue.ToString().Length)
+                {
+                    this.Lotto.Render.DisplayInputLengthError(lineCount);
+                    lineCount++;
+                    continue;
+                }
 
                 if (!int.TryParse(input, out iterations))
                 {
@@ -80,15 +87,8 @@ namespace Lottery_Simulator_2
             {
                 this.Lotto.Render.ShowErrorQuantityError();
             }
-                
-            do
-            {
-                if (Console.ReadKey(true).Key == ConsoleKey.Enter)
-                {
-                    break;
-                }
-            }
-            while (true);
+
+            this.Lotto.KeyChecker.WaitForEnter();
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Lottery_Simulator_2
         /// <param name="iterations">The amount of draws the user has picked.</param>
         private void DetermineSingleFrequency(int iterations)
         {
-            this.Lotto.Render.SetConsoleSettings();
+            this.Lotto.Render.SetConsoleSettings(92, 35);
             this.Lotto.Render.DisplayHeader(this.Title);
             this.Lotto.Render.DisplayFrequencyGrid(iterations);
 

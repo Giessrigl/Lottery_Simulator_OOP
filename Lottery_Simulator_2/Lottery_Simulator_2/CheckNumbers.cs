@@ -21,9 +21,20 @@ namespace Lottery_Simulator_2
         /// </summary>
         /// <param name="chosenNumbers">The user's chosen numbers.</param>
         /// <param name="randomNumbers">The generator's random numbers.</param>
+        /// <exception cref="ArgumentNullException">The chosen numbers array or the random numbers array is null.</exception>
         /// <returns>The amount of equal numbers.</returns>
         public int CompareNumbers(int[] chosenNumbers, int[] randomNumbers)
         {
+            if (chosenNumbers == null)
+            {
+                throw new ArgumentNullException(nameof(chosenNumbers));
+            }
+
+            if (randomNumbers == null)
+            {
+                throw new ArgumentNullException(nameof(randomNumbers));
+            }
+
             int equalNumbers = 0;
 
             for (int i = 0; i < chosenNumbers.Length; i++)
@@ -46,9 +57,20 @@ namespace Lottery_Simulator_2
         /// </summary>
         /// <param name="chosenNumbers">The user's chosen numbers.</param>
         /// <param name="randomNumbers">The generator's random numbers.</param>
+        /// <exception cref="ArgumentNullException">The chosen numbers array or the random numbers array is null.</exception>
         /// <returns>If one of the chosen numbers is the same as the last number in the random numbers (true).</returns>
         public bool CompareBonus(int[] chosenNumbers, int[] randomNumbers)
         {
+            if (chosenNumbers == null)
+            {
+                throw new ArgumentNullException(nameof(chosenNumbers));
+            }
+
+            if (randomNumbers == null)
+            {
+                throw new ArgumentNullException(nameof(randomNumbers));
+            }
+
             for (int i = 0; i < chosenNumbers.Length; i++)
             {
                 if (chosenNumbers[i] == randomNumbers[randomNumbers.Length - 1])
@@ -80,9 +102,15 @@ namespace Lottery_Simulator_2
         /// </summary>
         /// <param name="number">The number that has to be checked if it is already in the chosen numbers.</param>
         /// <param name="chosenNumbers">The already chosen numbers.</param>
+        /// <exception cref="ArgumentNullException">The chosen numbers array is null.</exception>
         /// <returns>Whether the number is already in the array of chosen numbers (false) or not in the array (true).</returns>
         public bool IsUnique(int number, int[] chosenNumbers)
         {
+            if (chosenNumbers == null)
+            {
+                throw new ArgumentNullException(nameof(chosenNumbers));
+            }
+
             for (int i = 0; i < chosenNumbers.Length; i++)
             {
                 if (number == chosenNumbers[i])

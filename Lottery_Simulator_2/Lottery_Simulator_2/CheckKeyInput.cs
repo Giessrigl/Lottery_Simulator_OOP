@@ -17,10 +17,10 @@ namespace Lottery_Simulator_2
     public class CheckKeyInput
     {
         /// <summary>
-        /// Checks if the pressed key is either the J -key or the N -key. The ReadKey() is implemented.
+        /// Checks if the pressed key is either the J key or the N key. The ReadKey() is implemented.
         /// </summary>
         /// <returns>True if the J - key has been pressed and False if the N - key has been pressed.</returns>
-        public bool YesNo()
+        public bool WaitForYesNo()
         {
             do
             {
@@ -33,6 +33,21 @@ namespace Lottery_Simulator_2
                 else if (userKey.Key == ConsoleKey.N)
                 {
                     return false;
+                }
+            }
+            while (true);
+        }
+
+        /// <summary>
+        /// Continues if the pressed key is the enter key. The ReadKey() is implemented.
+        /// </summary>
+        public void WaitForEnter()
+        {
+            do
+            {
+                if (Console.ReadKey(true).Key == ConsoleKey.Enter)
+                {
+                    break;
                 }
             }
             while (true);

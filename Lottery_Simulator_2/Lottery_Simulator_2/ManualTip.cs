@@ -43,12 +43,10 @@ namespace Lottery_Simulator_2
             this.chosenNumbers = new int[this.Lotto.Amount];
 
             // get user numbers
-            this.Lotto.Render.SetConsoleSettings();
+            this.Lotto.Render.SetConsoleSettings(92, 35);
             this.Lotto.Render.DisplayHeader(this.Title);
 
             int lineCount = 0;
-            int number = 0;
-
             for (int i = 0; i < this.chosenNumbers.Length; i++)
             {
                 if (lineCount >= Stopatline)
@@ -65,6 +63,14 @@ namespace Lottery_Simulator_2
 
                     string input = this.Lotto.Render.DisplayInputRequest(i + 1, lineCount);
                     lineCount++;
+                    int number;
+
+                    if (input.Length >= int.MaxValue.ToString().Length)
+                    {
+                        this.Lotto.Render.DisplayInputLengthError(lineCount);
+                        lineCount++;
+                        continue;
+                    }
 
                     if (!int.TryParse(input, out number))
                     {
@@ -105,14 +111,7 @@ namespace Lottery_Simulator_2
                 this.Lotto.Render.ShowErrorQuantityError();
             }
 
-            do
-            {
-                if (Console.ReadKey(true).Key == ConsoleKey.Enter)
-                {
-                    break;
-                }
-            }
-            while (true);
+            this.Lotto.KeyChecker.WaitForEnter();
         }
 
         /// <summary>
@@ -128,7 +127,7 @@ namespace Lottery_Simulator_2
             bool bonusNumber = this.Lotto.NumberChecker.CompareBonus(this.chosenNumbers, randomNumbers);
 
             // evaluation display
-            this.Lotto.Render.SetConsoleSettings();
+            this.Lotto.Render.SetConsoleSettings(92, 35);
             this.Lotto.Render.DisplayHeader(this.Title);
             this.Lotto.Render.DisplayEvaluation(this.chosenNumbers, randomNumbers, equalNumbers, bonusNumber);
         }

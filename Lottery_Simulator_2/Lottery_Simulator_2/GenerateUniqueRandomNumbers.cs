@@ -43,6 +43,11 @@ namespace Lottery_Simulator_2
             int min = (limit1 < limit2) ? limit1 : limit2;
             int max = (limit1 > limit2) ? limit1 : limit2;
 
+            if (amount <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(amount), "The amount has to be at least 1.");
+            }
+
             if (max - min + 1 < amount)
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "The amount does not fit into the range of numbers from limit1 and limit2!");

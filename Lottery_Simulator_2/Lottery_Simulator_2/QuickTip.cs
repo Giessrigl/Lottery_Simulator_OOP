@@ -42,20 +42,13 @@ namespace Lottery_Simulator_2
             bool bonusNumber = this.Lotto.NumberChecker.CompareBonus(chosenNumbers, randomNumbers);
 
             // evaluation display
-            this.Lotto.Render.SetConsoleSettings();
+            this.Lotto.Render.SetConsoleSettings(92, 35);
             this.Lotto.Render.DisplayHeader(this.Title);
             this.Lotto.Render.DisplayEvaluation(chosenNumbers, randomNumbers, equalNumbers, bonusNumber);
             this.Lotto.Render.DisplayReturnIfEnter();
 
             // press enter
-            do
-            {
-                if (Console.ReadKey(true).Key == ConsoleKey.Enter)
-                {
-                    break;
-                }
-            }
-            while (true);
+            this.Lotto.KeyChecker.WaitForEnter();
         }
     }
 }

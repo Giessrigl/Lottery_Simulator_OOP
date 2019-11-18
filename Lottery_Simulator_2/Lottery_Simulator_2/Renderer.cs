@@ -33,19 +33,25 @@ namespace Lottery_Simulator_2
         /// <param name="offsetLeft">At which position from left the whole program should be written into the console window.</param>
         /// <param name="offsetTop">At which position from top the whole program should be written into the console window.</param>
         public Renderer(int offsetLeft, int offsetTop)
-        {
+        { 
             this.left = offsetLeft;
             this.top = offsetTop;
         }
-        
+
         /// <summary>
         /// Writes the text with the appropriate foreground color and/or background color.
         /// </summary>
         /// <param name="text">The text that should be written.</param>
         /// <param name="foreground">The color of the foreground.</param>
         /// <param name="background">The color of the background.</param>
+        /// <exception cref="ArgumentNullException">The text is null.</exception>
         public void WriteInColor(string text, ConsoleColor foreground = ConsoleColor.White, ConsoleColor background = ConsoleColor.Black)
         {
+            if (text == null)
+            {
+                throw new ArgumentNullException(nameof(text));
+            }
+
             Console.ForegroundColor = foreground;
             Console.BackgroundColor = background;
             Console.Write($"{text}");
@@ -56,8 +62,14 @@ namespace Lottery_Simulator_2
         /// Writes a text with an underline made of '=' into the console.
         /// </summary>
         /// <param name="title">The text that should be written.</param>
+        /// <exception cref="ArgumentNullException">The title is null.</exception>
         public void DisplayHeader(string title)
         {
+            if (title == null)
+            {
+                throw new ArgumentNullException(nameof(title));
+            }
+
             Console.SetCursorPosition(this.left, this.top);
             this.WriteInColor($"{title}", ConsoleColor.Cyan);
 
@@ -69,25 +81,49 @@ namespace Lottery_Simulator_2
         }
 
         /// <summary>
-        /// Defines a specific window size.
+        /// Ensures the console has at least the required size.
         /// Sets the cursor to invisible and clears the console.
         /// </summary>
-        public void SetConsoleSettings()
+        /// <param name="requiredWidth">The required window width.</param>
+        /// <param name="requiredHeight">The required window height.</param>
+        public void SetConsoleSettings(int requiredWidth, int requiredHeight)
         {
+            if (requiredWidth < Console.BufferWidth - this.left)
+            {
+                Console.BufferWidth = 5000;
+                Console.WindowWidth = requiredWidth + this.left;
+                Console.BufferWidth = Console.WindowWidth;
+            }
+            
+            if (requiredHeight < Console.BufferHeight - this.top)
+            {
+                Console.BufferHeight = 5000;
+                Console.WindowHeight = requiredHeight + this.top;
+                Console.BufferHeight = Console.WindowHeight;
+            }
+
             Console.Clear();
             Console.CursorVisible = false;
-            Console.SetWindowSize(120, 35);
-            Console.SetBufferSize(120, 35);
         }
 
         /// <summary>
         /// Writes an error message to the user after pressing a false key.
-        /// </summary>
+        /// </summary>The position from top where the whole text will be written into the console window.
         /// <param name="offsetTop">The position from top where the whole text will be written into the console window.</param>
         public void DisplayUserKeyError(int offsetTop)
         {
             Console.SetCursorPosition(this.left, this.top + offsetTop);
             this.WriteInColor("Wrong Input! Please press enter to continue.", ConsoleColor.Red);
+        }
+
+        /// <summary>
+        /// Writes an error message to the user after receiving an input that is too long to get handled by an integer.
+        /// </summary>
+        /// <param name="offsetTop">The position from top where the whole text will be written into the console window.</param>
+        public void DisplayInputLengthError(int offsetTop)
+        {
+            Console.SetCursorPosition(this.left, this.top + 3 + offsetTop);
+            this.WriteInColor("Your input is too long!", ConsoleColor.Red);
         }
 
         /// <summary>
@@ -127,7 +163,7 @@ namespace Lottery_Simulator_2
         /// </summary>
         public void ShowErrorQuantityError()
         {
-            this.SetConsoleSettings();
+            this.SetConsoleSettings(92, 35);
             this.WriteInColor("You caused too many errors! Press enter to return to the main menu.", ConsoleColor.Red);
         }
 
@@ -135,9 +171,15 @@ namespace Lottery_Simulator_2
         /// Displays the main menu in the console window.
         /// </summary>
         /// <param name="modeOptions">The modes that are used in this lottery simulation.</param>
+        /// <exception cref="ArgumentNullException">The mode options array is null.</exception>
         public void DisplayMenu(Mode[] modeOptions)
         {
-            this.SetConsoleSettings();
+            if (modeOptions == null)
+            {
+                throw new ArgumentNullException(nameof(modeOptions));
+            }
+
+            this.SetConsoleSettings(120, 35);
             this.DisplayHeader("Welcome to the Lottery Simulator");
            
             for (int i = 0; i < modeOptions.Length; i++)
@@ -182,8 +224,19 @@ namespace Lottery_Simulator_2
         /// <param name="bonusNumber">True if the bonus number is hit.</param>
         /// <param name="offsetLeft">The position from left where the whole text will be written into the console window.</param>
         /// <param name="offsetTop">The position from top where the whole text will be written into the console window.</param>
+        /// <exception cref="ArgumentNullException">The chosen numbers array of the chosen numbers array is null.</exception>
         public void DisplayEvaluation(int[] chosenNumbers, int[] randomNumbers, int equalNumbers, bool bonusNumber, int offsetLeft = 0, int offsetTop = 0)
         {
+            if (chosenNumbers == null)
+            {
+                throw new ArgumentNullException(nameof(chosenNumbers));
+            }
+
+            if (randomNumbers == null)
+            {
+                throw new ArgumentNullException(nameof(randomNumbers));
+            }
+
             Console.SetCursorPosition(this.left + offsetLeft, 3 + this.top + offsetTop);
             Console.Write("Your chosen numbers: ");
             this.WriteInColor(string.Join(", ", chosenNumbers), ConsoleColor.DarkYellow);
@@ -210,8 +263,14 @@ namespace Lottery_Simulator_2
         /// <param name="rows">The amount of rows the grid has.</param>
         /// <param name="columns">The amount of columns the grid has.</param>
         /// <param name="cellNumbers">The numbers that are inside the grid cells.</param>
+        /// <exception cref="ArgumentNullException">The cell numbers array is null.</exception>
         public void DisplayGraphicalGrid(int rows, int columns, int[] cellNumbers)
         {
+            if (cellNumbers == null)
+            {
+                throw new ArgumentNullException(nameof(cellNumbers));
+            }
+
             int cellindex = 0;
             int cellWidth = 5;
             int cellHeight = 2;
@@ -271,8 +330,14 @@ namespace Lottery_Simulator_2
         /// <param name="cursorRow">The row the cursor was until this moment.</param>
         /// <param name="cursorColumn">The column the cursor was until this moment.</param>
         /// <param name="cellsChosen">The array of the statuses of the cells, whether they are selected or not.</param>
+        /// <exception cref="ArgumentNullException">The cells chosen array is null.</exception>
         public void DisplayCellStatus(int rows, int cursorRow, int cursorColumn, bool[] cellsChosen)
         {
+            if (cellsChosen == null)
+            {
+                throw new ArgumentNullException(nameof(cellsChosen));
+            }
+
             int cellWidth = 5;
             int cellHeight = 2;
 
@@ -307,8 +372,14 @@ namespace Lottery_Simulator_2
         /// </summary>
         /// <param name="rows">The amount of rows the grid has.</param>
         /// <param name="randomNumbers">The generated random numbers.</param>
+        /// <exception cref="ArgumentNullException">The random numbers array is null.</exception>
         public void DisplayGridRandomNumbers(int rows, int[] randomNumbers)
         {
+            if (randomNumbers == null)
+            {
+                throw new ArgumentNullException(nameof(randomNumbers));
+            }
+
             const int CellHeight = 2;
             const int CellWidth = 5;
 
@@ -341,6 +412,11 @@ namespace Lottery_Simulator_2
         /// <param name="chosenNumbers">The numbers the user has selected.</param>
         public void DisplayGridUserNumbers(int rows, int[] chosenNumbers)
         {
+            if (chosenNumbers == null)
+            {
+                throw new ArgumentNullException(nameof(chosenNumbers));
+            }
+
             const int CellHeight = 2;
             const int CellWidth = 5;
 
@@ -372,8 +448,19 @@ namespace Lottery_Simulator_2
         /// <param name="rows">The amount of rows the grid has.</param>
         /// <param name="chosenNumbers">The numbers the user has chosen.</param>
         /// <param name="randomNumbers">The generated random numbers.</param>
+        /// <exception cref="ArgumentNullException">The chosen numbers array or the random numbers array is null.</exception>
         public void DisplayGridEqualNumbers(int rows, int[] chosenNumbers, int[] randomNumbers)
         {
+            if (chosenNumbers == null)
+            {
+                throw new ArgumentNullException(nameof(chosenNumbers));
+            }
+
+            if (randomNumbers == null)
+            {
+                throw new ArgumentNullException(nameof(randomNumbers));
+            }
+
             const int CellHeight = 2;
             const int CellWidth = 5;
 
@@ -504,8 +591,14 @@ namespace Lottery_Simulator_2
         /// </summary>
         /// <param name="frequencies">The amount of how often a number has been drawn relative to the other numbers.</param>
         /// <param name="highestFrequence">The highest frequency possible.</param>
+        /// <exception cref="ArgumentNullException">The frequencies array is null.</exception>
         public void DisplayFrequencyEvaluation(int[] frequencies, int highestFrequence)
         {
+            if (frequencies == null)
+            {
+                throw new ArgumentNullException(nameof(frequencies));
+            }
+
             for (int i = 1; i < 46; i++)
             {
                 int numberFrequence = (frequencies[i - 1] * 16) / highestFrequence;
@@ -533,8 +626,14 @@ namespace Lottery_Simulator_2
         /// Writes the user's numbers into the console window and leaves the draws until jackpot line with three spots.
         /// </summary>
         /// <param name="chosenNumbers">The numbers the user has chosen.</param>
+        /// <exception cref="ArgumentNullException">The chosen numbers array is null.</exception>
         public void ShowJackpotDisplay(int[] chosenNumbers)
         {
+            if (chosenNumbers == null)
+            {
+                throw new ArgumentNullException(nameof(chosenNumbers));
+            }
+
             string values = string.Join(", ", chosenNumbers);
 
             Console.SetCursorPosition(this.left, this.top + 3);

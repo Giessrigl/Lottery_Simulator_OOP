@@ -66,7 +66,6 @@ namespace Lottery_Simulator_2
         /// </summary>
         public override void Execute()
         {
-            // Determines the height and width of the Grid and Evaluates which numbers to place inside the grid.
             int valueAmount = this.Lotto.Max - this.Lotto.Min + 1;
             this.columns = this.CalculateColumns(valueAmount);
             this.rows = valueAmount / this.columns;
@@ -80,12 +79,10 @@ namespace Lottery_Simulator_2
                 throw new IndexOutOfRangeException();
             }
 
-            // Displays the grid.
-            this.Lotto.Render.SetConsoleSettings();
+            this.Lotto.Render.SetConsoleSettings(92, 35);
             this.Lotto.Render.DisplayHeader(this.Title);
             this.Lotto.Render.DisplayGraphicalGrid(this.rows, this.columns, this.cellNumbers);
 
-            // Does the selecting part
             try
             {
                 this.SelectNumbers();
@@ -95,12 +92,10 @@ namespace Lottery_Simulator_2
                 throw new ArgumentOutOfRangeException();
             }
 
-            // Evaluates the outcome.
             int[] randomNumbers = this.Lotto.NumberGen.Generate(this.Lotto.Amount + 1, this.Lotto.Min, this.Lotto.Max);
             int equalnumbers = this.Lotto.NumberChecker.CompareNumbers(this.chosenNumbers, randomNumbers);
             bool bonusNumber = this.Lotto.NumberChecker.CompareBonus(this.chosenNumbers, randomNumbers);
 
-            // the 4 is just to not stick on the grid with the evaluation.
             int offsetLeft = 4 + (this.rows * 5);
             int offsetTop = 2;
 
@@ -110,15 +105,7 @@ namespace Lottery_Simulator_2
             this.Lotto.Render.DisplayEvaluation(this.chosenNumbers, randomNumbers, equalnumbers, bonusNumber, offsetLeft, offsetTop);
             this.Lotto.Render.DisplayReturnIfEnter();
 
-            // press enter
-            do
-            {
-                if (Console.ReadKey(true).Key == ConsoleKey.Enter)
-                {
-                    break;
-                }
-            }
-            while (true);
+            this.Lotto.KeyChecker.WaitForEnter();
         }
 
         /// <summary>

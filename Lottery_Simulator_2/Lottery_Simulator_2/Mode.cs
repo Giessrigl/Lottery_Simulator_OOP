@@ -23,10 +23,15 @@ namespace Lottery_Simulator_2
         /// <param name="abbreviation">The key for the Mode object (has to be unique among them).</param>
         /// <param name="uniqueChars">The keys that are already in use to prevent not calling the second mode with the same abbreviation.</param>
         /// <param name="lotto">The Lottery variable that should be used.</param>
-        /// <exception cref="ArgumentNullException">If the title has no actual name.</exception>
+        /// <exception cref="ArgumentNullException">If the title has no actual name or the unique char array is null.</exception>
         /// <exception cref="ArgumentException">If the abbreviation has already be used.</exception>
         public Mode(string title, char abbreviation, char[] uniqueChars, Lottery lotto)
         {
+            if (uniqueChars == null)
+            {
+                throw new ArgumentNullException(nameof(uniqueChars));
+            }
+
             for (int i = 0; i < uniqueChars.Length; i++)
             {
                 if (uniqueChars[i] == abbreviation)
