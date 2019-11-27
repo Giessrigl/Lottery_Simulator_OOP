@@ -1,0 +1,6 @@
+C:\Users\Giessrigl\source\repos\Lottery_Simulator_3\Lottery_Simulator_3\obj\Debug\Lottery_Simulator_3.csprojAssemblyReference.cache
+C:\Users\Giessrigl\source\repos\Lottery_Simulator_3\Lottery_Simulator_3\bin\Debug\Lottery_Simulator_3.exe.config
+C:\Users\Giessrigl\source\repos\Lottery_Simulator_3\Lottery_Simulator_3\bin\Debug\Lottery_Simulator_3.exe
+C:\Users\Giessrigl\source\repos\Lottery_Simulator_3\Lottery_Simulator_3\bin\Debug\Lottery_Simulator_3.pdb
+C:\Users\Giessrigl\source\repos\Lottery_Simulator_3\Lottery_Simulator_3\obj\Debug\Lottery_Simulator_3.exe
+C:\Users\Giessrigl\source\repos\Lottery_Simulator_3\Lottery_Simulator_3\obj\Debug\Lottery_Simulator_3.pdb
