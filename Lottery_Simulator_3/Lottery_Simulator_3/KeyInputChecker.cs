@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="CheckKeyInput.cs" company="FH Wiener Neustadt">
+// <copyright file="KeyInputChecker.cs" company="FH Wiener Neustadt">
 //     Copyright (c) FH Wiener Neustadt. All rights reserved.
 // </copyright>
 // <author>Christian Giessrigl</author>

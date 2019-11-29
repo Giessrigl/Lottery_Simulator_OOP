@@ -15,64 +15,75 @@ namespace Lottery_Simulator_3
 
     /// <summary>
     /// This is the main class of the lottery game.
-    /// It creates all mode options.
     /// Every mode gets the classes they need from here.
-    /// Gives the user the right to move between the modes.
+    /// Gives the user the ability to move between the modes.
     /// </summary>
     public class Lottery
     {
-
-        /// <summary>
-        /// Contains all mode options.
-        /// </summary>
-        public List<Mode> modes { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the Lottery class.
         /// </summary>
-        /// <param name="amount">The amount of Numbers the user can choose.</param>
-        /// <param name="limit1">The first rim of the numbers in which the user can choose.</param>
-        /// <param name="limit2">The second rim of the numbers in which the user can choose.</param>
-        /// <exception cref="ArgumentOutOfRangeException">If the amount is less than or equal zero.</exception>
-        /// <exception cref="ArgumentOutOfRangeException">If one of the limits is less than zero.</exception>
-        /// <exception cref="ArgumentOutOfRangeException">If the amount is bigger than the numbers in the range of numbers.</exception>
         public Lottery()
         {
             this.ActualSystem = new CurrentSystem(6, 6, 1, 45, 1, 1, 45, false);
             this.NumberSystems = new List<NumberSystem>();
-            this.NumberSystems.Add(ActualSystem);
+            this.NumberSystems.Add(this.ActualSystem);
 
             this.CurrentMenu = new MainMenu("Main Menu", 'M', new char[0], this);
             this.Random = new Random();
             this.NumberChecker = new NumbersChecker();
-            this.Render = new DefaultRenderer();
+            this.Renderer = new DefaultConsoleRenderer();
             this.KeyChecker = new KeyInputChecker();
             this.NumberGen = new RandomNumbersGenerator(this.Random);
-            this.ErrorChecker = new ErrorCheck(this);
-
+            this.ErrorChecker = new ErrorChecker(this);
         }
 
+        /// <summary>
+        /// Gets or sets all modes listed in the menu.
+        /// </summary>
+        /// <value>The list of modes that are in the current menu.</value>
+        public List<Mode> Modes { get; set; }
+
+        /// <summary>
+        /// Gets or sets the current used number system.
+        /// </summary>
+        /// <value>
+        /// The current used number system.
+        /// </value>
         public NumberSystem ActualSystem
         { 
             get; 
             set; 
         }
 
+        /// <summary>
+        /// Gets or sets all currently available number systems.
+        /// </summary>
+        /// <value>
+        /// The list of currently available number systems.
+        /// </value>
         public List<NumberSystem> NumberSystems
         {
             get;
             set;
         }
 
-        public ErrorCheck ErrorChecker
+        /// <summary>
+        /// Gets the error checker object.
+        /// </summary>
+        /// <value>
+        /// The used error checker instance.
+        /// </value>
+        public ErrorChecker ErrorChecker
         {
             get;
             private set;
         }
+
         /// <summary>
-        /// Gets the Random property.
+        /// Gets the Random object.
         /// </summary>
-        /// /// <value>
+        /// <value>
         /// The Random variable.
         /// </value>
         public Random Random
@@ -82,21 +93,21 @@ namespace Lottery_Simulator_3
         }
 
         /// <summary>
-        /// Gets the Render property.
+        /// Gets or sets the DefaultConsoleRenderer object.
         /// </summary>
-        /// /// <value>
+        /// <value>
         /// The Renderer variable.
         /// </value>
-        public DefaultRenderer Render
+        public DefaultConsoleRenderer Renderer
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Gets the KeyChecker property.
+        /// Gets the KeyInputChecker object.
         /// </summary>
-        /// /// <value>
+        /// <value>
         /// The CheckKeyInput variable.
         /// </value>
         public KeyInputChecker KeyChecker
@@ -118,7 +129,7 @@ namespace Lottery_Simulator_3
         }
 
         /// <summary>
-        /// Gets the NumberGen property.
+        /// Gets the RandomNumberGenerator object.
         /// </summary>
         /// /// <value>
         /// The GenerateUniqueRandomNumbers variable.
@@ -129,6 +140,12 @@ namespace Lottery_Simulator_3
             private set;
         }
 
+        /// <summary>
+        /// Gets or sets the Mode object.
+        /// </summary>
+        /// <value>
+        /// The currently used menu.
+        /// </value>
         public Mode CurrentMenu
         {
             get;
@@ -144,17 +161,20 @@ namespace Lottery_Simulator_3
             do
             {
                 this.CurrentMenu.Execute();
-                this.OpenMenu();
+                this.OpenMode();
             }
             while (true);
         }
 
-        public void OpenMenu()
+        /// <summary>
+        /// Opens the specified mode based on the key the user pressed.
+        /// </summary>
+        public void OpenMode()
         {
             do
             {
                 ConsoleKeyInfo userKey = Console.ReadKey(true);
-                foreach (Mode mode in this.modes)
+                foreach (Mode mode in this.Modes)
                 {
                     if (char.ToUpper(userKey.KeyChar) == mode.Abbreviation)
                     {
@@ -162,9 +182,10 @@ namespace Lottery_Simulator_3
                         return;
                     }
                 }
-                this.Render.DisplayGeneralError("Wrong Input! Please press enter to continue.", 3, 6 + this.modes.Count);
+
+                this.Renderer.DisplayGeneralError("Wrong Input! Please press enter to continue.", 3, 6 + this.Modes.Count);
                 this.KeyChecker.WaitForEnter();
-                this.Render.OverwriteBlank(90, 3, 6 + this.modes.Count);
+                this.Renderer.OverwriteBlank(90, 3, 6 + this.Modes.Count);
             }
             while (true);
         }

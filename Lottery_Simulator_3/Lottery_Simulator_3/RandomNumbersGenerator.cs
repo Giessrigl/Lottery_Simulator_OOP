@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="GenerateUniqueRandomNumbers.cs" company="FH Wiener Neustadt">
+// <copyright file="RandomNumbersGenerator.cs" company="FH Wiener Neustadt">
 //     Copyright (c) FH Wiener Neustadt. All rights reserved.
 // </copyright>
 // <author>Christian Giessrigl</author>
@@ -13,7 +13,7 @@ namespace Lottery_Simulator_3
     using System;
 
     /// <summary>
-    /// This class is for generating an array of unique numbers.
+    /// This class is for generating arrays of numbers.
     /// </summary>
     public class RandomNumbersGenerator
     {
@@ -23,7 +23,7 @@ namespace Lottery_Simulator_3
         private Random random;
 
         /// <summary>
-        /// Initializes a new instance of the GenerateUniqueRandomNumbers class.
+        /// Initializes a new instance of the RandomNumbersGenerator class.
         /// </summary>
         /// <param name="random">The used random variable for the methods.</param>
         public RandomNumbersGenerator(Random random)
@@ -32,7 +32,7 @@ namespace Lottery_Simulator_3
         }
 
         /// <summary>
-        /// Generates the random numbers based on the amount of numbers and their range limits.
+        /// Generates unique random numbers in a range of numbers based on the amount of numbers and their range limits.
         /// </summary>
         /// <param name="amount">The amount of numbers which should be generated.</param>
         /// <param name="limit1">The first range of the numbers.</param>
@@ -67,6 +67,15 @@ namespace Lottery_Simulator_3
             return randomNumbers;
         }
 
+        /// <summary>
+        /// Generates random numbers of either one range of numbers or the another range of numbers based on the amount of numbers and their range limits.
+        /// </summary>
+        /// <param name="amount">The amount of numbers which should be generated.</param>
+        /// <param name="range1Limit1">The first limit of the first range of the numbers.</param>
+        /// <param name="range1Limit2">The second limit of the first range of the numbers.</param>
+        /// <param name="range2Limit1">The first limit of the second range of the numbers.</param>
+        /// <param name="range2Limit2">The second limit of the second range of the numbers.</param>
+        /// <returns>An array of the generated numbers.</returns>
         public int[] GenerateUniquesInRanges(int amount, int range1Limit1, int range1Limit2, int range2Limit1, int range2Limit2)
         {
             int min1 = (range1Limit1 < range1Limit2) ? range1Limit1 : range1Limit2;
@@ -85,11 +94,10 @@ namespace Lottery_Simulator_3
             int count;
             for (int i = 0; i < amount; i++)
             {
-
                 do
                 {
                     count = 0;
-                    num = random.Next(0, 2) == 0 ? random.Next(min1, max1 + 1) : random.Next(min2, max2 + 1);
+                    num = this.random.Next(0, 2) == 0 ? this.random.Next(min1, max1 + 1) : this.random.Next(min2, max2 + 1);
                     foreach (int number in numbers)
                     {
                         if (number == num)
@@ -97,7 +105,6 @@ namespace Lottery_Simulator_3
                             count++;
                         }
                     }
-
                 }
                 while (count > 1);
 
@@ -105,10 +112,17 @@ namespace Lottery_Simulator_3
             }
 
             return numbers;
-
         }
 
-        public int[] GenerateDoublesInRange(int amount, int limit1, int limit2)
+        /// <summary>
+        /// Generates random numbers in a range of numbers based on the amount of numbers and their range limits.
+        /// Numbers are allowed to appear twice.
+        /// </summary>
+        /// <param name="amount">The amount of numbers which should be generated.</param>
+        /// <param name="limit1">The first range of the numbers.</param>
+        /// <param name="limit2">The second range of the numbers.</param>
+        /// <returns>An array of the generated numbers.</returns>
+        public int[] GenerateDuplexInRange(int amount, int limit1, int limit2)
         {
             int min = (limit1 < limit2) ? limit1 : limit2;
             int max = (limit1 > limit2) ? limit1 : limit2;
@@ -124,7 +138,6 @@ namespace Lottery_Simulator_3
             int count;
             for (int i = 0; i < amount; i++)
             {
-
                 do
                 {
                     count = 0;
@@ -136,7 +149,6 @@ namespace Lottery_Simulator_3
                             count++;
                         }
                     }
-
                 }
                 while (count > 2);
 
@@ -146,7 +158,17 @@ namespace Lottery_Simulator_3
             return randomNumbers;
         }
 
-        public int[] GenerateDoublesInRanges(int amount, int range1Limit1, int range1Limit2, int range2Limit1, int range2Limit2)
+        /// <summary>
+        /// Generates random numbers of either one range of numbers or the another range of numbers based on the amount of numbers and their range limits.
+        /// Numbers are allowed to appear twice.
+        /// </summary>
+        /// <param name="amount">The amount of numbers which should be generated.</param>
+        /// <param name="range1Limit1">The first limit of the first range of the numbers.</param>
+        /// <param name="range1Limit2">The second limit of the first range of the numbers.</param>
+        /// <param name="range2Limit1">The first limit of the second range of the numbers.</param>
+        /// <param name="range2Limit2">The second limit of the second range of the numbers.</param>
+        /// <returns>An array of the generated numbers.</returns>
+        public int[] GenerateDuplexInRanges(int amount, int range1Limit1, int range1Limit2, int range2Limit1, int range2Limit2)
         {
             int min1 = (range1Limit1 < range1Limit2) ? range1Limit1 : range1Limit2;
             int max1 = (range1Limit1 > range1Limit2) ? range1Limit1 : range1Limit2;
@@ -164,11 +186,10 @@ namespace Lottery_Simulator_3
             int count;
             for (int i = 0; i < amount; i++)
             {
-                
                 do
                 {
                     count = 0;
-                    num = random.Next(0, 2) == 0 ? random.Next(min1, max1 + 1) : random.Next(min2, max2 + 1);
+                    num = this.random.Next(0, 2) == 0 ? this.random.Next(min1, max1 + 1) : this.random.Next(min2, max2 + 1);
                     foreach (int number in numbers)
                     {
                         if (number == num)
@@ -176,7 +197,6 @@ namespace Lottery_Simulator_3
                             count++;
                         }
                     }
-                    
                 }
                 while (count > 2);
 
@@ -184,7 +204,6 @@ namespace Lottery_Simulator_3
             }
 
             return numbers;
-
         }
 
         /// <summary>

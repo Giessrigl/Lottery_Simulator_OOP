@@ -52,26 +52,26 @@
     <Compile Include="NumberSystemDeletion.cs" />
     <Compile Include="FrequencyDetermination.cs" />
     <Compile Include="ErrorChecker.cs" />
-    <Compile Include="ExitApp.cs" />
+    <Compile Include="ApplicationExit.cs" />
     <Compile Include="RandomNumbersGenerator.cs" />
     <Compile Include="GraphicalTip.cs" />
-    <Compile Include="IEvaluationDependent.cs" />
+    <Compile Include="IEvaluable.cs" />
     <Compile Include="IExecuteable.cs" />
     <Compile Include="JackpotSimulation.cs" />
     <Compile Include="Lottery.cs" />
     <Compile Include="ManualTip.cs" />
     <Compile Include="Mode.cs" />
     <Compile Include="MainMenu.cs" />
-    <Compile Include="ModeRenderer.cs" />
+    <Compile Include="ExecuteableConsoleRenderer.cs" />
     <Compile Include="NumberSystem.cs" />
     <Compile Include="NumberSystemsMenu.cs" />
     <Compile Include="CurrentNumberSystems.cs" />
-    <Compile Include="OptionsMenuRenderer.cs" />
+    <Compile Include="OptionsConsoleRenderer.cs" />
     <Compile Include="OptionsMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickTip.cs" />
-    <Compile Include="DefaultRenderer.cs" />
+    <Compile Include="DefaultConsoleRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

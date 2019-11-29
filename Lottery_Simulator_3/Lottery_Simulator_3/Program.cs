@@ -5,7 +5,7 @@
 // <author>Christian Giessrigl</author>
 // <summary>
 // This is a program for playing lotto in different representations.
-// This is the second homework of the first semester at the FH Wiener Neustadt.
+// This is the third homework of the first semester at the FH Wiener Neustadt.
 // </summary>
 //-----------------------------------------------------------------------
 namespace Lottery_Simulator_3

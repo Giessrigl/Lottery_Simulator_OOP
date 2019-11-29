@@ -1,10 +1,10 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="CheckNumbers.cs" company="FH Wiener Neustadt">
+// <copyright file="NumbersChecker.cs" company="FH Wiener Neustadt">
 //     Copyright (c) FH Wiener Neustadt. All rights reserved.
 // </copyright>
 // <author>Christian Giessrigl</author>
 // <summary>
-// Determines the validity of a number or compares numbers with other numbers
+// This file contains the NumbersChecker class.
 // </summary>
 //-----------------------------------------------------------------------
 namespace Lottery_Simulator_3
@@ -16,7 +16,6 @@ namespace Lottery_Simulator_3
     /// </summary>
     public class NumbersChecker
     {
-
         /// <summary>
         /// Compares the user's chosen numbers with the random generated numbers.
         /// </summary>
@@ -44,7 +43,7 @@ namespace Lottery_Simulator_3
                 {
                     if (chosenNumbers[i] == randomNumbers[j])
                     {
-                        equalNumbers ++;
+                        equalNumbers++;
                         break;
                     }
                 }
@@ -68,6 +67,15 @@ namespace Lottery_Simulator_3
             return !(number < min || number > max);
         }
 
+        /// <summary>
+        /// Checks if a number is in one range or the other. Each range has two limits.
+        /// </summary>
+        /// <param name="number">The number that has to be checked.</param>
+        /// <param name="range1Limit1">The first limit of numbers of the first range the number can be in.</param>
+        /// <param name="range1Limit2">The second limit of numbers of the first range the number can be in.</param>
+        /// <param name="range2Limit1">The first limit of numbers of the second range the number can be in.</param>
+        /// <param name="range2Limit2">The second limit of numbers of the second range the number can be in.</param>
+        /// <returns>Whether the number is in one of the ranges (true) or not in any of both ranges (false).</returns>
         public bool IsInBothRanges(int number, int range1Limit1, int range1Limit2, int range2Limit1, int range2Limit2)
         {
             int min1 = (range1Limit1 < range1Limit2) ? range1Limit1 : range1Limit2;
@@ -84,31 +92,12 @@ namespace Lottery_Simulator_3
             {
                 return true;
             }
+
             return false;
         }
 
-        public bool IsMaxTwice(int number, int[] chosenNumbers)
-        {
-            int count = 0;
-
-            for (int i = 0; i < chosenNumbers.Length; i++)
-            {
-                if (chosenNumbers[i] == number)
-                {
-                    count ++;
-                }
-            }
-
-            if (count > 2)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
         /// <summary>
-        /// Checks already chosen numbers contains the number.
+        /// Checks if already chosen numbers contains the number.
         /// </summary>
         /// <param name="number">The number that has to be checked if it is already in the chosen numbers.</param>
         /// <param name="chosenNumbers">The already chosen numbers.</param>

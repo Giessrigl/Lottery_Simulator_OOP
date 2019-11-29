@@ -1,12 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="DefaultConsoleRenderer.cs" company="FH Wiener Neustadt">
+//     Copyright (c) FH Wiener Neustadt. All rights reserved.
+// </copyright>
+// <author>Christian Giessrigl</author>
+// <summary>
+// This is a file for the DefaultConsoleRenderer class.
+// </summary>
+//-----------------------------------------------------------------------
 namespace Lottery_Simulator_3
 {
-    public class DefaultRenderer
+    using System;
+    using System.Collections.Generic;
+    
+    /// <summary>
+    /// This class contains all important methods that all modes need for displaying something on the console.
+    /// </summary>
+    public class DefaultConsoleRenderer
     {
         /// <summary>
         /// Writes the text with the appropriate foreground color and/or background color.
@@ -32,6 +41,8 @@ namespace Lottery_Simulator_3
         /// Writes a text into the console.
         /// </summary>
         /// <param name="title">The text that should be written.</param>
+        /// <param name="offsetLeft">The indentation from the left rim of the console.</param>
+        /// <param name="offsetTop">The indentation from the top rim of the console.</param>
         /// <exception cref="ArgumentNullException">The title is null.</exception>
         public void DisplayHeader(string title, int offsetLeft, int offsetTop)
         {
@@ -58,29 +69,41 @@ namespace Lottery_Simulator_3
         /// <param name="requiredHeight">The required window height.</param>
         public void SetConsoleSettings(int requiredWidth, int requiredHeight)
         {
-            
-            Console.BufferWidth = 1500;
             Console.WindowWidth = requiredWidth;
-            
-            Console.BufferHeight = 5000;
+            Console.BufferWidth = Console.WindowWidth;
+
             Console.WindowHeight = requiredHeight;
-            
+            Console.BufferHeight = Console.WindowHeight;
+
             Console.Clear();
             Console.CursorVisible = false;
         }
 
+        /// <summary>
+        /// Displays an error message to the user in red foreground color.
+        /// </summary>
+        /// <param name="text">The error message for the user.</param>
+        /// <param name="offsetLeft">The indentation from the left rim of the console.</param>
+        /// <param name="offsetTop">The indentation from the top rim of the console.</param>
+        /// <exception cref="ArgumentNullException">The text is null.</exception>
         public void DisplayGeneralError(string text, int offsetLeft, int offsetTop)
         {
+            if (text == null)
+            {
+                throw new ArgumentNullException(nameof(text));
+            }
+
             Console.SetCursorPosition(offsetLeft, offsetTop);
             this.WriteInColor(text, ConsoleColor.Red);
         }
 
         /// <summary>
-        /// Writes an error message to the user after the number is not in range of the two limits.
+        /// Writes an error message to the user for numbers that are not in a range.
         /// </summary>
-        /// <param name="min">The lower limit of the range.</param>
-        /// <param name="max">The upper limit of the range.</param>
-        /// <param name="offsetTop">The position from top where the whole text will be written into the console window.</param>
+        /// <param name="limit1">The first limit of the range.</param>
+        /// <param name="limit2">The second limit of the range.</param>
+        /// <param name="offsetLeft">The indentation from the left rim of the console.</param>
+        /// <param name="offsetTop">The indentation from the top rim of the console.</param>
         public void DisplayUserRangeError(int limit1, int limit2, int offsetLeft, int offsetTop)
         {
             int min = (limit1 < limit2) ? limit1 : limit2;
@@ -90,6 +113,15 @@ namespace Lottery_Simulator_3
             this.WriteInColor($"Type in a number between {min} and {max}!", ConsoleColor.Red);
         }
 
+        /// <summary>
+        /// Writes an error message to the user for numbers that are not between one of the two ranges.
+        /// </summary>
+        /// <param name="range1Limit1">The first limit of the first range.</param>
+        /// <param name="range1Limit2">The second limit of the first range.</param>
+        /// <param name="range2Limit1">The first limit of the second range.</param>
+        /// <param name="range2Limit2">The second limit of the second range.</param>
+        /// <param name="offsetLeft">The indentation from the left rim of the console.</param>
+        /// <param name="offsetTop">The indentation from the top rim of the console.</param>
         public void DisplayUserRangesError(int range1Limit1, int range1Limit2, int range2Limit1, int range2Limit2, int offsetLeft, int offsetTop)
         {
             int min1 = (range1Limit1 < range1Limit2) ? range1Limit1 : range1Limit2;
@@ -103,17 +135,10 @@ namespace Lottery_Simulator_3
         }
 
         /// <summary>
-        /// Writes an error message to the user after causing too many error messages in the console window.
-        /// </summary>
-        public void ShowErrorQuantityError()
-        {
-            this.SetConsoleSettings(92, 35);
-            this.WriteInColor("You caused too many errors! Press enter to return to the main menu.", ConsoleColor.Red);
-        }
-
-        /// <summary>
         /// Writes a message to the user that he/she has to press enter to continue.
         /// </summary>
+        /// <param name="offsetLeft">The indentation from the left rim of the console.</param>
+        /// <param name="offsetTop">The indentation from the top rim of the console.</param>
         public void DisplayReturnIfEnter(int offsetLeft, int offsetTop)
         {
             Console.SetCursorPosition(offsetLeft, offsetTop);
@@ -121,9 +146,11 @@ namespace Lottery_Simulator_3
         }
 
         /// <summary>
-        /// Displays the main menu in the console window.
+        /// Displays a menu in the console window.
         /// </summary>
-        /// <param name="menuOptions">The modes that are used in this lottery simulation.</param>
+        /// <param name="menuOptions">The modes that are used in this menu.</param>
+        /// <param name="offsetLeft">The indentation from the left rim of the console.</param>
+        /// <param name="offsetTop">The indentation from the top rim of the console.</param>
         /// <exception cref="ArgumentNullException">The mode options array is null.</exception>
         public void DisplayMenu(List<Mode> menuOptions, int offsetLeft, int offsetTop)
         {
@@ -148,6 +175,14 @@ namespace Lottery_Simulator_3
             Console.Write("Please enter your Desicion: ");
         }
 
+        /// <summary>
+        /// Gets an answer from the user after displaying a text.
+        /// </summary>
+        /// <param name="text">The ''Question'' the user gets displayed.</param>
+        /// <param name="offsetLeft">The indentation from the left rim of the console.</param>
+        /// <param name="offsetTop">The indentation from the top rim of the console.</param>
+        /// <exception cref="ArgumentNullException">The text is null.</exception>
+        /// <returns>The users answer.</returns>
         public string GetAnswer(string text, int offsetLeft, int offsetTop)
         {
             if (text == null)
@@ -173,6 +208,12 @@ namespace Lottery_Simulator_3
             Console.ForegroundColor = ConsoleColor.White;
         }
 
+        /// <summary>
+        /// Writes spaces into the console.
+        /// </summary>
+        /// <param name="charAmount">The amount of spaces that should be written.</param>
+        /// <param name="offsetLeft">The indentation from the left rim of the console.</param>
+        /// <param name="offsetTop">The indentation from the top rim of the console.</param>
         public void OverwriteBlank(int charAmount, int offsetLeft, int offsetTop)
         {
             Console.SetCursorPosition(offsetLeft, offsetTop);
@@ -185,13 +226,21 @@ namespace Lottery_Simulator_3
         /// <summary>
         /// Asks the user if he really wants to quit.
         /// </summary>
+        /// <param name="offsetLeft">The indentation from the left rim of the console.</param>
+        /// <param name="offsetTop">The indentation from the top rim of the console.</param>
         public void DisplayExitRequest(int offsetLeft, int offsetTop)
         {
             Console.SetCursorPosition(offsetLeft, offsetTop);
             this.WriteInColor("Do you really want to quit? (J/N): ", ConsoleColor.Red);
         }
 
-        public void DisplayCursor(int offsetLeft, int offsetTop)
+        /// <summary>
+        /// Colors the background of the specified position in gray to simulate a ''cursor''.
+        /// Deletes everything that is displayed 2 rows over and beneath the position.
+        /// </summary>
+        /// <param name="offsetLeft">The indentation from the left rim of the console.</param>
+        /// <param name="offsetTop">The indentation from the top rim of the console.</param>
+        public void DisplayVerticalCursor(int offsetLeft, int offsetTop)
         {
             for (int i = -2; i < 3; i++)
             {
@@ -203,6 +252,15 @@ namespace Lottery_Simulator_3
             this.WriteInColor(" ", ConsoleColor.White, ConsoleColor.Gray);
         }
 
-
+        /// <summary>
+        /// Displays a message to the console that the user can use the arrow keys to move around.
+        /// </summary>
+        /// <param name="offsetLeft">The indentation from the left rim of the console.</param>
+        /// <param name="offsetTop">The indentation from the top rim of the console.</param>
+        public void DisplayMoveMessage(int offsetLeft, int offsetTop)
+        {
+            Console.SetCursorPosition(offsetLeft, offsetTop);
+            this.WriteInColor("Use the arrow keys to move through the display.", ConsoleColor.Green);
+        }
     }
 }

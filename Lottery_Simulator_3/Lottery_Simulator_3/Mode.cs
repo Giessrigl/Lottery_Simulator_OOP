@@ -12,7 +12,7 @@ namespace Lottery_Simulator_3
     using System;
 
     /// <summary>
-    /// Super Class for the mode objects initialized in the mode admin.
+    /// This class is the base class of all modes.
     /// </summary>
     public abstract class Mode : IExecuteable
     {
@@ -57,7 +57,7 @@ namespace Lottery_Simulator_3
             this.Title = title;
             this.Abbreviation = abbreviation;
             this.Lotto = lotto;
-            this.Render = new ModeRenderer();
+            this.Render = new ExecuteableConsoleRenderer();
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Lottery_Simulator_3
         }
 
         /// <summary>
-        /// Gets the Lotto property.
+        /// Gets the Lottery object.
         /// </summary>
         /// <value>
         /// The Lottery variable.
@@ -97,14 +97,20 @@ namespace Lottery_Simulator_3
             private set;
         }
 
-        public ModeRenderer Render
+        /// <summary>
+        /// Gets the ModeRenderer object.
+        /// </summary>
+        /// <value>
+        /// The mode renderer variable.
+        /// </value>
+        public ExecuteableConsoleRenderer Render
         {
             get;
-            set;
+            private set;
         }
 
         /// <summary>
-        /// Gets the InputChecker property.
+        /// Gets the InputChecker object.
         /// </summary>
         /// <value>
         /// The CheckUserInput variable.
@@ -115,9 +121,9 @@ namespace Lottery_Simulator_3
             private set;
         }
 
-        public virtual void Execute()
-        {
-
-        }
+        /// <summary>
+        /// This method should contain the steps that have to be made to display the purpose of the initialized mode.
+        /// </summary>
+        public abstract void Execute();
     }
 }
