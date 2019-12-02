@@ -36,7 +36,7 @@ namespace Lottery_Simulator_3
             this.Lotto.Modes = this.CreateModes(this.Lotto);
             this.Lotto.CurrentMenu = this;
 
-            this.Render.SetConsoleSettings(90, 35);
+            this.Render.SetConsoleSettings(65, this.Lotto.Modes.Count + 15);
             this.Render.DisplayHeader(this.Title, 3, 1);
             this.Render.DisplayMenu(this.Lotto.Modes, 3, 4);
         }

@@ -24,7 +24,7 @@ namespace Lottery_Simulator_3
         /// <param name="offsetTop">The indentation from the top rim of the console.</param>
         public void DisplayEvaluationNumber(int number, int offsetLeft, int offsetTop)
         {
-            this.OverwriteBlank(90, 0, offsetTop);
+            this.OverwriteBlank(55, 0, offsetTop);
             Console.SetCursorPosition(offsetLeft, offsetTop);
             this.WriteInColor($"{number}", ConsoleColor.DarkYellow);
         }
@@ -62,7 +62,7 @@ namespace Lottery_Simulator_3
 
             if (equalNumbers > 2 && equalBonusNumbers == 1)
             {
-                Console.Write($"You hit {equalNumbers} numbers and the bonus number!");
+                Console.Write($"You hit {equalNumbers} numbers and a bonus number!");
             }
             else if (equalNumbers > 2 && equalBonusNumbers > 1)
             {
@@ -74,7 +74,7 @@ namespace Lottery_Simulator_3
             }
             else if (equalBonusNumbers == 1)
             {
-                Console.Write("You hit the bonus number!");
+                Console.Write("You hit a bonus number!");
             }
             else if (equalBonusNumbers > 1)
             {
@@ -108,7 +108,7 @@ namespace Lottery_Simulator_3
             }
             else if (equalNumbers > 2 && equalNumbers < maxNumbers && equalBonusNumbers == 1)
             {
-                Console.Write($"You hit {equalNumbers} numbers and the bonus number!");
+                Console.Write($"You hit {equalNumbers} numbers and a bonus number!");
             }
             else if (equalNumbers > 2 && equalNumbers < maxNumbers)
             {
@@ -116,7 +116,7 @@ namespace Lottery_Simulator_3
             }
             else if (equalBonusNumbers == 1)
             {
-                Console.Write("You hit the bonus number!");
+                Console.Write("You hit a bonus number!");
             }
             else if (equalBonusNumbers > 1)
             {
@@ -172,7 +172,7 @@ namespace Lottery_Simulator_3
                 throw new ArgumentNullException(nameof(content));
             }
 
-            this.OverwriteBlank(90, offsetLeft, offsetTop);
+            this.OverwriteBlank(55, offsetLeft, offsetTop);
 
             Console.SetCursorPosition(offsetLeft, offsetTop);
             Console.Write($"{content} |                |");
@@ -194,10 +194,48 @@ namespace Lottery_Simulator_3
         /// <param name="offsetTop">The position from top where the whole text will be written into the console window.</param>
         public void DisplayFrequencyStatus(int draw, int iterations, double percentage, int offsetLeft, int offsetTop)
         {
+            this.OverwriteBlank(55, 0, offsetTop);
             Console.SetCursorPosition(offsetLeft, offsetTop);
             Console.Write("Iterations: ");
             Console.Write($"{draw} / {iterations}");
-            Console.Write($"( {percentage} %)");
+            Console.Write($" ({percentage}%)");
+        }
+
+        /// <summary>
+        /// Displays a rectangle with a number as content (depending how long the number is) in the console window.
+        /// </summary>
+        /// <param name="number">The content of the cell.</param>
+        /// <param name="backgroundColor">The background color of the cell.</param>
+        /// <param name="offsetLeft">The position from left where the whole text will be written into the console window.</param>
+        /// <param name="offsetTop">The position from top where the whole text will be written into the console window.</param>
+        public void DisplayGraphicalCell(int number, ConsoleColor backgroundColor, int offsetLeft, int offsetTop)
+        {
+            this.OverwriteBlank(55, 0, offsetTop);
+            this.OverwriteBlank(55, 0, offsetTop + 1);
+            this.OverwriteBlank(55, 0, offsetTop + 2);
+
+            Console.SetCursorPosition(offsetLeft, offsetTop);
+            Console.Write("+");
+            for (int i = 0; i < number.ToString().Length + 2; i++)
+            {
+                Console.Write("-");
+            }
+
+            Console.Write("+");
+
+            Console.SetCursorPosition(offsetLeft, offsetTop + 1);
+            Console.Write("|");
+            this.WriteInColor($" {number} ", ConsoleColor.White, backgroundColor);
+            Console.Write("|");
+
+            Console.SetCursorPosition(offsetLeft, offsetTop + 2);
+            Console.Write("+");
+            for (int i = 0; i < number.ToString().Length + 2; i++)
+            {
+                Console.Write("-");
+            }
+
+            Console.Write("+");
         }
     }
 }

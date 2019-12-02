@@ -185,7 +185,7 @@ namespace Lottery_Simulator_3
 
                 this.Renderer.DisplayGeneralError("Wrong Input! Please press enter to continue.", 3, 6 + this.Modes.Count);
                 this.KeyChecker.WaitForEnter();
-                this.Renderer.OverwriteBlank(90, 3, 6 + this.Modes.Count);
+                this.Renderer.OverwriteBlank(55, 3, 6 + this.Modes.Count);
             }
             while (true);
         }

@@ -69,11 +69,11 @@ namespace Lottery_Simulator_3
         /// </summary>
         public override void Execute()
         {
-            this.Render.SetConsoleSettings(90, 40);
+            this.Render.SetConsoleSettings(65, 20);
             this.Render.DisplayHeader(this.Title, this.offsetLeft, this.offsetTop - 4);
             this.PerformPreEvaluation();
 
-            this.Render.SetConsoleSettings(90, 40);
+            this.Render.SetConsoleSettings(65, 20);
             this.Render.DisplayHeader(this.Title, this.offsetLeft, this.offsetTop - 4);
             this.PerformEvaluation();
         }
@@ -83,42 +83,43 @@ namespace Lottery_Simulator_3
         /// </summary>
         public void PerformPreEvaluation()
         {
-            this.chosenNumbers = new int[this.Lotto.ActualSystem.NumberDraws];
+            this.chosenNumbers = new int[this.Lotto.ActualSystem.NumberAmount];
             int number;
 
             for (int i = 0; i < this.chosenNumbers.Length; i++)
             {
+                this.Render.OverwriteBlank(55, 0, this.offsetTop);
                 string question = $"Please enter the {i + 1}. number: ";
                 do
                 {
-                    string input = this.Lotto.Renderer.GetAnswer(question, this.offsetLeft, i + this.offsetTop);
-                    this.Render.OverwriteBlank(90, 0, i + this.offsetTop + 1);
+                    string input = this.Lotto.Renderer.GetAnswer(question, this.offsetLeft, this.offsetTop);
+                    this.Render.OverwriteBlank(55, 0, this.offsetTop + 1);
 
                     if (input.Length > int.MaxValue.ToString().Length)
                     {
-                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, i + this.offsetTop);
-                        this.Render.DisplayGeneralError("Your input is too long!", this.offsetLeft, i + this.offsetTop + 1);
+                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, this.offsetTop);
+                        this.Render.DisplayGeneralError("Your input is too long!", this.offsetLeft, this.offsetTop + 1);
                         continue;
                     }
 
                     if (!int.TryParse(input, out number))
                     {
-                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, i + this.offsetTop);
-                        this.Render.DisplayGeneralError("Type in a positive, whole number!", this.offsetLeft, i + this.offsetTop + 1);
+                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, this.offsetTop);
+                        this.Render.DisplayGeneralError("Type in a positive, whole number!", this.offsetLeft, this.offsetTop + 1);
                         continue;
                     }
 
                     if (!this.Lotto.NumberChecker.IsInBothRanges(number, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax))
                     {
-                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, i + this.offsetTop);
-                        this.Render.DisplayUserRangesError(this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax, this.offsetLeft, i + this.offsetTop + 1);
+                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, this.offsetTop);
+                        this.Render.DisplayUserRangesError(this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax, this.offsetLeft, this.offsetTop + 1);
                         continue;
                     }
 
                     if (!this.Lotto.NumberChecker.IsUnique(number, this.chosenNumbers))
                     {
-                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, i + this.offsetTop);
-                        this.Render.DisplayGeneralError("The number must not be used twice!", this.offsetLeft, i + this.offsetTop + 1);
+                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, this.offsetTop);
+                        this.Render.DisplayGeneralError("The number must not be used twice!", this.offsetLeft, this.offsetTop + 1);
                         continue;
                     }     
                     else
@@ -136,13 +137,12 @@ namespace Lottery_Simulator_3
         /// </summary>
         public void PerformEvaluation()
         {
-            this.randomNumbers = new int[this.Lotto.ActualSystem.NumberAmount];
+            this.randomNumbers = new int[this.Lotto.ActualSystem.NumberDraws];
             this.randomBonusNumbers = new int[this.Lotto.ActualSystem.BonusNumberAmount];
-            int[] allRandomNumbers;
             
             if (this.Lotto.ActualSystem.BonusPool)
             {
-                this.randomNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberAmount, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max);
+                this.randomNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberDraws, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max);
                 if (this.Lotto.ActualSystem.BonusNumberAmount > 0)
                 {
                     this.randomBonusNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax);
@@ -150,65 +150,36 @@ namespace Lottery_Simulator_3
             }
             else
             {
+                int[] allRandomNumbers;
+                int numberIndex = 0;
+                int bonusNumberIndex = 0;
+
                 if (this.Lotto.ActualSystem.Min >= this.Lotto.ActualSystem.BonusNumberMin && this.Lotto.ActualSystem.Max <= this.Lotto.ActualSystem.BonusNumberMax)
                 {
-                    allRandomNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberAmount + this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax);
-                    for (int i = 0; i < this.Lotto.ActualSystem.NumberAmount; i++)
-                    {
-                        this.randomNumbers[i] = allRandomNumbers[i];
-                    }
-
-                    if (this.Lotto.ActualSystem.BonusNumberAmount > 0)
-                    {
-                        for (int i = this.Lotto.ActualSystem.NumberAmount; i < this.Lotto.ActualSystem.NumberAmount + this.Lotto.ActualSystem.BonusNumberAmount; i++)
-                        {
-                            this.randomBonusNumbers[i - this.Lotto.ActualSystem.NumberAmount] = allRandomNumbers[i];
-                        }
-                    }
+                    allRandomNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberDraws + this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax);
                 }
                 else if (this.Lotto.ActualSystem.BonusNumberMin >= this.Lotto.ActualSystem.Min && this.Lotto.ActualSystem.BonusNumberMax <= this.Lotto.ActualSystem.Max)
                 {
-                    allRandomNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberAmount + this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max);
-                    for (int i = 0; i < this.Lotto.ActualSystem.NumberAmount; i++)
-                    {
-                        this.randomNumbers[i] = allRandomNumbers[i];
-                    }
-
-                    if (this.Lotto.ActualSystem.BonusNumberAmount > 0)
-                    {
-                        for (int i = this.Lotto.ActualSystem.NumberAmount; i < this.Lotto.ActualSystem.NumberAmount + this.Lotto.ActualSystem.BonusNumberAmount; i++)
-                        {
-                            this.randomBonusNumbers[i - this.Lotto.ActualSystem.NumberAmount] = allRandomNumbers[i];
-                        }
-                    }
+                    allRandomNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberDraws + this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max);
                 }
                 else
                 {
-                    allRandomNumbers = this.Lotto.NumberGen.GenerateUniquesInRanges(this.Lotto.ActualSystem.NumberAmount + this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax);
-                    for (int i = 0; i < allRandomNumbers.Length; i++)
+                    allRandomNumbers = this.Lotto.NumberGen.GenerateUniquesInRanges(this.Lotto.ActualSystem.NumberDraws, this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax);
+                }
+
+                for (int i = 0; i < allRandomNumbers.Length; i++)
+                {
+                    if (allRandomNumbers[i] > this.Lotto.ActualSystem.Min && allRandomNumbers[i] < this.Lotto.ActualSystem.Max && numberIndex < this.Lotto.ActualSystem.NumberDraws)
                     {
-                        if (allRandomNumbers[i] > this.Lotto.ActualSystem.Min && allRandomNumbers[i] < this.Lotto.ActualSystem.Max)
+                        this.randomNumbers[numberIndex] = allRandomNumbers[i];
+                        numberIndex++;
+                    }
+                    else
+                    {
+                        if (this.Lotto.ActualSystem.BonusNumberAmount > 0)
                         {
-                            try
-                            {
-                                this.randomNumbers[i] = allRandomNumbers[i];
-                            }
-                            catch
-                            {
-                            }
-                        }
-                        else
-                        {
-                            if (this.Lotto.ActualSystem.BonusNumberAmount > 0)
-                            {
-                                try
-                                {
-                                    this.randomBonusNumbers[i] = allRandomNumbers[i];
-                                }
-                                catch
-                                {
-                                }
-                            }
+                            this.randomBonusNumbers[bonusNumberIndex] = allRandomNumbers[i];
+                            bonusNumberIndex++;
                         }
                     }
                 }
@@ -230,6 +201,7 @@ namespace Lottery_Simulator_3
             this.Render.DisplayEvaluation(this.Lotto.ActualSystem.BonusNumberAmount, this.offsetLeft + 1, this.offsetTop);
             this.Render.DisplayEvaluationNumber(this.chosenNumbers[0], this.offsetLeft + 2, this.offsetTop + 1);
             this.Render.DisplayEvaluationNumber(this.randomNumbers[0], this.offsetLeft + 2, this.offsetTop + 3);
+
             if (this.Lotto.ActualSystem.BonusNumberAmount > 0)
             {
                 this.Render.DisplayEvaluationNumber(this.randomBonusNumbers[0], this.offsetLeft + 2, this.offsetTop + 5);

@@ -69,11 +69,11 @@ namespace Lottery_Simulator_3
         /// </summary>
         public override void Execute()
         {
-            this.Render.SetConsoleSettings(90, 40);
+            this.Render.SetConsoleSettings(65, 20);
             this.Render.DisplayHeader(this.Title, this.offsetLeft, this.offsetTop - 4);
             this.PerformPreEvaluation();
 
-            this.Render.SetConsoleSettings(90, 40);
+            this.Render.SetConsoleSettings(65, 20);
             this.Render.DisplayHeader(this.Title, this.offsetLeft, this.offsetTop - 4);
             this.PerformEvaluation();
         }
@@ -83,15 +83,21 @@ namespace Lottery_Simulator_3
         /// </summary>
         public void PerformPreEvaluation()
         {
-            this.chosenNumbers = this.Lotto.NumberGen.GenerateUniquesInRanges(this.Lotto.ActualSystem.NumberDraws, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax);
+            if (this.Lotto.ActualSystem.BonusNumberAmount > 0)
+            {
+                this.chosenNumbers = this.Lotto.NumberGen.GenerateUniquesInRanges(this.Lotto.ActualSystem.NumberAmount, this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax);
+            }
+            else
+            {
+                this.chosenNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberAmount, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max);
+            }
 
-            this.randomNumbers = new int[this.Lotto.ActualSystem.NumberAmount];
+            this.randomNumbers = new int[this.Lotto.ActualSystem.NumberDraws];
             this.randomBonusNumbers = new int[this.Lotto.ActualSystem.BonusNumberAmount];
-            int[] allRandomNumbers;
 
             if (this.Lotto.ActualSystem.BonusPool)
             {
-                this.randomNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberAmount, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max);
+                this.randomNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberDraws, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max);
                 if (this.Lotto.ActualSystem.BonusNumberAmount > 0)
                 {
                     this.randomBonusNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax);
@@ -99,33 +105,34 @@ namespace Lottery_Simulator_3
             }
             else
             {
+                int[] allRandomNumbers;
                 if (this.Lotto.ActualSystem.Min >= this.Lotto.ActualSystem.BonusNumberMin && this.Lotto.ActualSystem.Max <= this.Lotto.ActualSystem.BonusNumberMax)
                 {
-                    allRandomNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberAmount + this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax);
-                    for (int i = 0; i < this.Lotto.ActualSystem.NumberAmount; i++)
+                    allRandomNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberDraws + this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax);
+                    for (int i = 0; i < this.Lotto.ActualSystem.NumberDraws; i++)
                     {
                         this.randomNumbers[i] = allRandomNumbers[i];
                     }
 
                     if (this.Lotto.ActualSystem.BonusNumberAmount > 0)
                     {
-                        for (int i = this.Lotto.ActualSystem.NumberAmount; i < this.Lotto.ActualSystem.NumberAmount + this.Lotto.ActualSystem.BonusNumberAmount; i++)
+                        for (int i = this.Lotto.ActualSystem.NumberDraws; i < this.Lotto.ActualSystem.NumberDraws + this.Lotto.ActualSystem.BonusNumberAmount; i++)
                         {
-                            this.randomBonusNumbers[i - this.Lotto.ActualSystem.NumberAmount] = allRandomNumbers[i];
+                            this.randomBonusNumbers[i - this.Lotto.ActualSystem.NumberDraws] = allRandomNumbers[i];
                         }
                     }
                 }
                 else if (this.Lotto.ActualSystem.BonusNumberMin >= this.Lotto.ActualSystem.Min && this.Lotto.ActualSystem.BonusNumberMax <= this.Lotto.ActualSystem.Max)
                 {
-                    allRandomNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberAmount + this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max);
-                    for (int i = 0; i < this.Lotto.ActualSystem.NumberAmount; i++)
+                    allRandomNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberDraws + this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max);
+                    for (int i = 0; i < this.Lotto.ActualSystem.NumberDraws; i++)
                     {
                         this.randomNumbers[i] = allRandomNumbers[i];
                     }
 
                     if (this.Lotto.ActualSystem.BonusNumberAmount > 0)
                     {
-                        for (int i = this.Lotto.ActualSystem.NumberAmount; i < this.Lotto.ActualSystem.NumberAmount + this.Lotto.ActualSystem.BonusNumberAmount; i++)
+                        for (int i = this.Lotto.ActualSystem.NumberAmount; i < this.Lotto.ActualSystem.NumberDraws + this.Lotto.ActualSystem.BonusNumberAmount; i++)
                         {
                             this.randomBonusNumbers[i - this.Lotto.ActualSystem.NumberAmount] = allRandomNumbers[i];
                         }
@@ -133,7 +140,7 @@ namespace Lottery_Simulator_3
                 }
                 else
                 {
-                    allRandomNumbers = this.Lotto.NumberGen.GenerateUniquesInRanges(this.Lotto.ActualSystem.NumberAmount + this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax);
+                    allRandomNumbers = this.Lotto.NumberGen.GenerateUniquesInRanges(this.Lotto.ActualSystem.NumberDraws, this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax);
                     for (int i = 0; i < allRandomNumbers.Length; i++)
                     {
                         if (allRandomNumbers[i] > this.Lotto.ActualSystem.Min && allRandomNumbers[i] < this.Lotto.ActualSystem.Max)

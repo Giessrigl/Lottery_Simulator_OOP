@@ -59,12 +59,12 @@ namespace Lottery_Simulator_3
         /// </summary>
         public override void Execute()
         {
-            this.Render.SetConsoleSettings(90, 40);
+            this.Render.SetConsoleSettings(55, 20);
             this.Render.DisplayHeader(this.Title, this.offsetLeft, this.offsetTop - 4);
           
             this.PerformPreEvaluation();
 
-            this.Render.SetConsoleSettings(90, 40);
+            this.Render.SetConsoleSettings(55, 20);
             this.Render.DisplayHeader(this.Title, this.offsetLeft, this.offsetTop - 4);
             
             this.PerformEvaluation();
@@ -75,43 +75,44 @@ namespace Lottery_Simulator_3
         /// </summary>
         public void PerformPreEvaluation()
         {
-            this.chosenNumbers = new int[this.Lotto.ActualSystem.NumberDraws];
+            this.chosenNumbers = new int[this.Lotto.ActualSystem.NumberAmount];
             int number;
 
             // choose the normal numbers
             for (int i = 0; i < this.chosenNumbers.Length; i++)
             {
+                this.Render.OverwriteBlank(55, 0, this.offsetTop);
                 string question = $"Please enter the {i + 1}. number: ";
                 do
                 {
-                    string input = this.Lotto.Renderer.GetAnswer(question, this.offsetLeft, i + this.offsetTop);
-                    this.Render.OverwriteBlank(90, 0, i + this.offsetTop + 1);
+                    string input = this.Lotto.Renderer.GetAnswer(question, this.offsetLeft, this.offsetTop);
+                    this.Render.OverwriteBlank(55, 0, this.offsetTop + 1);
 
                     if (input.Length >= int.MaxValue.ToString().Length)
                     {
-                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, i + this.offsetTop);
-                        this.Render.DisplayGeneralError("Your input is too long!", this.offsetLeft, i + this.offsetTop + 1);
+                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, this.offsetTop);
+                        this.Render.DisplayGeneralError("Your input is too long!", this.offsetLeft, this.offsetTop + 1);
                         continue;
                     }
 
                     if (!int.TryParse(input, out number))
                     {
-                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, i + this.offsetTop);
-                        this.Render.DisplayGeneralError("Type in a positive, whole number!", this.offsetLeft, i + this.offsetTop + 1);
+                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, this.offsetTop);
+                        this.Render.DisplayGeneralError("Type in a positive, whole number!", this.offsetLeft, this.offsetTop + 1);
                         continue;
                     }
 
                     if (!this.Lotto.NumberChecker.IsInRange(number, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max))
                     {
-                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, i + this.offsetTop);
-                        this.Render.DisplayUserRangeError(this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max, this.offsetLeft, i + this.offsetTop + 1);
+                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, this.offsetTop);
+                        this.Render.DisplayUserRangeError(this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max, this.offsetLeft, this.offsetTop + 1);
                         continue;
                     }
 
                     if (!this.Lotto.NumberChecker.IsUnique(number, this.chosenNumbers))
                     {
-                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, i + this.offsetTop);
-                        this.Render.DisplayGeneralError("The number must not be used twice!", this.offsetLeft, i + this.offsetTop + 1);
+                        this.Render.OverwriteBlank(input.Length + 1, this.offsetLeft + question.Length, this.offsetTop);
+                        this.Render.DisplayGeneralError("The number must not be used twice!", this.offsetLeft, this.offsetTop + 1);
                         continue;
                     }
                     else
@@ -132,14 +133,15 @@ namespace Lottery_Simulator_3
             int iterations = 0;
             this.Render.ShowJackpotDisplay(this.offsetLeft, this.offsetTop);
             this.Render.DisplayEvaluationNumber(this.chosenNumbers[0], this.offsetLeft + 1, this.offsetTop + 1);
+            
             do
             {
-                this.randomNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberAmount, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max);
+                this.randomNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberDraws, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max);
                 this.equalNumbers = this.Lotto.NumberChecker.CompareNumbers(this.chosenNumbers, this.randomNumbers);
                 iterations++;
             }
             while (this.equalNumbers < this.Lotto.ActualSystem.NumberAmount);
-
+            
             this.Render.DisplayMoveMessage(this.offsetLeft, this.offsetTop - 1);
             this.Render.DisplayJackpotIterations(iterations, 23, this.offsetTop + 2);
             this.Render.DisplayReturnIfEnter(this.offsetLeft, Console.WindowHeight - 2);

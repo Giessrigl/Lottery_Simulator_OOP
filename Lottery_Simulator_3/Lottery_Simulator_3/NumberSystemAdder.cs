@@ -97,181 +97,236 @@ namespace Lottery_Simulator_3
             const int Limitmax = int.MaxValue;
             const int DrawAmount = 1000;
 
-            do
+            if (this.Lotto.NumberSystems.Count < 10)
             {
-                this.Render.SetConsoleSettings(90, 40);
-                this.Render.DisplayHeader(this.Title, this.offsetLeft, this.offsetTop - 4);
-
-                int linecount = 0;
                 do
                 {
-                    this.numberDraws = this.Lotto.ErrorChecker.EvaluateNumberErrors("Type in the amount of numbers the user has to choose: ", 1, DrawAmount, this.offsetLeft, this.offsetTop + linecount);
-                    linecount++;
-                    this.numberAmount = this.Lotto.ErrorChecker.EvaluateNumberErrors("Type in the amount of numbers the system draws: ", 1, DrawAmount, this.offsetLeft, this.offsetTop + linecount);
-                    linecount++;
-                    int limit1 = this.Lotto.ErrorChecker.EvaluateNumberErrors("Type in the first limit of the range of numbers: ", Limitmin, Limitmax, this.offsetLeft, this.offsetTop + linecount);
-                    linecount++;
-                    int limit2 = this.Lotto.ErrorChecker.EvaluateNumberErrors("Type in the second limit of the range of numbers: ", Limitmin, Limitmax, this.offsetLeft, this.offsetTop + linecount);
-                    linecount++;
+                    this.Render.SetConsoleSettings(150, 40);
+                    this.Render.DisplayHeader(this.Title, this.offsetLeft, this.offsetTop - 4);
 
-                    this.min = (limit1 < limit2) ? limit1 : limit2;
-                    this.max = (limit1 > limit2) ? limit1 : limit2;
-                    if (this.max - this.min + 1 < this.numberAmount)
+                    do
                     {
-                        linecount--;
-                        this.Renderer.DisplayGeneralError("The area of the numbers is to little for the amount of numbers. Please press enter to continue!", this.offsetLeft, this.offsetTop + 1 + linecount);
-                        linecount -= 2;
-                        this.Lotto.KeyChecker.WaitForEnter();
-
-                        this.Renderer.OverwriteBlank(90, 0, this.offsetTop + linecount);
-                        this.Renderer.OverwriteBlank(90, 0, this.offsetTop + linecount + 1);
-                        this.Renderer.OverwriteBlank(90, 0, this.offsetTop + linecount + 2);
-                        this.Renderer.OverwriteBlank(90, 0, this.offsetTop + linecount + 3);
-                        continue;
-                    }
-                    else
-                    {
-                        do
+                        this.numberAmount = this.Lotto.ErrorChecker.EvaluateNumberErrors("Type in the amount of numbers the user has to choose: ", 1, DrawAmount, this.offsetLeft, this.offsetTop);
+                       
+                        this.numberDraws = this.Lotto.ErrorChecker.EvaluateNumberErrors("Type in the amount of numbers the system draws: ", 1, DrawAmount, this.offsetLeft, this.offsetTop + 1);
+                        
+                        int limit1 = this.Lotto.ErrorChecker.EvaluateNumberErrors("Type in the first limit of the range of numbers: ", Limitmin, Limitmax, this.offsetLeft, this.offsetTop + 2);
+                        
+                        int limit2 = this.Lotto.ErrorChecker.EvaluateNumberErrors("Type in the second limit of the range of numbers: ", Limitmin, Limitmax, this.offsetLeft, this.offsetTop + 3);
+                        
+                        this.min = (limit1 < limit2) ? limit1 : limit2;
+                        this.max = (limit1 > limit2) ? limit1 : limit2;
+                        if (this.max - this.min + 1 < this.numberDraws)
                         {
-                            this.bonusNumbers = this.Lotto.ErrorChecker.EvaluateNumberErrors("Type in the amount of bonus numbers you want to choose: ", 0, DrawAmount, this.offsetLeft, this.offsetTop + linecount);
-                            linecount++;
-                            if (this.bonusNumbers > 0)
+                            this.Renderer.DisplayGeneralError("The area of the numbers is to little for the amount of system numbers. Please press enter to continue!", this.offsetLeft, this.offsetTop + 4);
+                            this.Lotto.KeyChecker.WaitForEnter();
+
+                            this.Renderer.OverwriteBlank(150, 0, this.offsetTop);
+                            this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 1);
+                            this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 2);
+                            this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 3);
+                            this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 4);
+                            continue;
+                        }
+                        else if (this.max - this.min + 1 < this.numberAmount)
+                        {
+                            this.Renderer.DisplayGeneralError("The area of the numbers is to little for the amount of user numbers. Please press enter to continue!", this.offsetLeft, this.offsetTop + 4);
+                            this.Lotto.KeyChecker.WaitForEnter();
+
+                            this.Renderer.OverwriteBlank(150, 0, this.offsetTop);
+                            this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 1);
+                            this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 2);
+                            this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 3);
+                            this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 4);
+                            continue;
+                        }
+                        else
+                        {
+                            do
                             {
-                                int bonusNumberLimit1 = this.Lotto.ErrorChecker.EvaluateNumberErrors("Type in the first limit of the range of bonus numbers: ", Limitmin, Limitmax, this.offsetLeft, this.offsetTop + linecount);
-                                linecount++;
-                                int bonusNumberLimit2 = this.Lotto.ErrorChecker.EvaluateNumberErrors("Type in the second limit of the range of bonus numbers: ", Limitmin, Limitmax, this.offsetLeft, this.offsetTop + linecount);
-                                linecount++;
-
-                                this.bonusMin = (bonusNumberLimit1 < bonusNumberLimit2) ? bonusNumberLimit1 : bonusNumberLimit2;
-                                this.bonusMax = (bonusNumberLimit1 > bonusNumberLimit2) ? bonusNumberLimit1 : bonusNumberLimit2;
-
-                                if (this.bonusMax - this.bonusMin + 1 < this.bonusNumbers)
+                                this.bonusNumbers = this.Lotto.ErrorChecker.EvaluateNumberErrors("Type in the amount of bonus numbers the system draws: ", 0, DrawAmount, this.offsetLeft, this.offsetTop + 5);
+                                
+                                if (this.bonusNumbers > 0)
                                 {
-                                    linecount--;
-                                    this.Renderer.DisplayGeneralError("The area of the numbers is to little for the amount of numbers. Please press enter to continue!", this.offsetLeft, this.offsetTop + 1 + linecount);
-                                    linecount -= 2;
-                                    this.Lotto.KeyChecker.WaitForEnter();
+                                    int bonusNumberLimit1 = this.Lotto.ErrorChecker.EvaluateNumberErrors("Type in the first limit of the range of bonus numbers: ", Limitmin, Limitmax, this.offsetLeft, this.offsetTop + 6);
+                                   
+                                    int bonusNumberLimit2 = this.Lotto.ErrorChecker.EvaluateNumberErrors("Type in the second limit of the range of bonus numbers: ", Limitmin, Limitmax, this.offsetLeft, this.offsetTop + 7);
+                                    
+                                    this.bonusMin = (bonusNumberLimit1 < bonusNumberLimit2) ? bonusNumberLimit1 : bonusNumberLimit2;
+                                    this.bonusMax = (bonusNumberLimit1 > bonusNumberLimit2) ? bonusNumberLimit1 : bonusNumberLimit2;
 
-                                    this.Renderer.OverwriteBlank(90, 0, this.offsetTop + linecount);
-                                    this.Renderer.OverwriteBlank(90, 0, this.offsetTop + linecount + 1);
-                                    this.Renderer.OverwriteBlank(90, 0, this.offsetTop + linecount + 2);
-                                    this.Renderer.OverwriteBlank(90, 0, this.offsetTop + linecount + 3);
-                                    continue;
-                                }
-                                else
-                                {
-                                    this.Render.SetConsoleSettings(90, 40);
-                                    this.Render.DisplayHeader(this.Title, this.offsetLeft, this.offsetTop - 4);
-                                    this.Renderer.DisplayBonusPoolChoice(this.offsetLeft + 2, this.offsetTop);
-
-                                    int index = 0;
-                                    do
+                                    if (this.bonusMax - this.bonusMin + 1 < this.bonusNumbers)
                                     {
-                                        this.Renderer.DisplayVerticalCursor(this.offsetLeft, this.offsetTop + index);
-                                        ConsoleKeyInfo userkey = Console.ReadKey(true);
-                                        if (userkey.Key == ConsoleKey.UpArrow && index > 0)
-                                        {
-                                            index--;
-                                        }
-                                        else if (userkey.Key == ConsoleKey.DownArrow && index < 1)
-                                        {
-                                            index++;
-                                        }
-                                        else if (userkey.Key == ConsoleKey.Enter)
-                                        {
-                                            if (index < 1)
-                                            {
-                                                this.bonusPool = false;
-                                                break;
-                                            }
-                                            else
-                                            {
-                                                this.bonusPool = true;
-                                                break;
-                                            }
-                                        }
+                                        this.Renderer.DisplayGeneralError("The area of the numbers is to little for the amount of bonus numbers. Please press enter to continue!", this.offsetLeft, this.offsetTop + 8);
+                                        
+                                        this.Lotto.KeyChecker.WaitForEnter();
+
+                                        this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 5);
+                                        this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 6);
+                                        this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 7);
+                                        this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 8);
+                                        continue;
                                     }
-                                    while (true);
-                                    break;
+                                    else
+                                    {
+                                        this.Render.SetConsoleSettings(150, 40);
+                                        this.Render.DisplayHeader(this.Title, this.offsetLeft, this.offsetTop - 4);
+                                        this.Renderer.DisplayBonusPoolChoice(this.offsetLeft + 2, this.offsetTop);
+
+                                        int index = 0;
+                                        do
+                                        {
+                                            this.Renderer.DisplayVerticalCursor(this.offsetLeft, this.offsetTop + index);
+                                            ConsoleKeyInfo userkey = Console.ReadKey(true);
+                                            if (userkey.Key == ConsoleKey.UpArrow && index > 0)
+                                            {
+                                                index--;
+                                            }
+                                            else if (userkey.Key == ConsoleKey.DownArrow && index < 1)
+                                            {
+                                                index++;
+                                            }
+                                            else if (userkey.Key == ConsoleKey.Enter)
+                                            {
+                                                if (index < 1)
+                                                {
+                                                    this.bonusPool = false;
+                                                    break;
+                                                }
+                                                else
+                                                {
+                                                    this.bonusPool = true;
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                        while (true);
+                                    }
                                 }
-                            }
-                            else
-                            {
+
                                 break;
                             }
+                            while (true);
                         }
-                        while (true);
+
+                        break;
+                    }
+                    while (true);
+
+                    this.Renderer.OverwriteBlank(150, 0, this.offsetTop);
+                    this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 1);
+                    this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 2);
+                    this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 3);
+                    this.Renderer.OverwriteBlank(150, 0, this.offsetTop + 4);
+
+                    if (!this.bonusPool)
+                    {
+                        if (this.min == this.bonusMin && this.max == this.bonusMax)
+                        {
+                            if ((this.max - this.min + 1) < (this.numberDraws + this.bonusNumbers))
+                            {
+                                this.Renderer.DisplayGeneralError($"The total amount of numbers (bonus and normal together) in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop);
+                                this.Lotto.KeyChecker.WaitForEnter();
+                                continue;
+                            }
+                            else if ((this.max - this.min + 1) < this.numberAmount)
+                            {
+                                this.Renderer.DisplayGeneralError($"The amount of numbers the user has to choose in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop);
+                                this.Lotto.KeyChecker.WaitForEnter();
+                                continue;
+                            }
+                        }
+                        else if (this.min > this.bonusMin && this.max < this.bonusMax)
+                        {
+                            if ((this.bonusMax - this.bonusMin + 1) < (this.numberDraws + this.bonusNumbers))
+                            {
+                                this.Renderer.DisplayGeneralError($"The total amount of numbers (bonus and normal together) in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop);
+                                this.Lotto.KeyChecker.WaitForEnter();
+                                continue;
+                            }
+                            else if ((this.bonusMax - this.bonusMin + 1) < this.numberAmount)
+                            {
+                                this.Renderer.DisplayGeneralError($"The amount of numbers the user has to choose in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop);
+                                this.Lotto.KeyChecker.WaitForEnter();
+                                continue;
+                            }
+                        }
+                        else if (this.bonusMin > this.min && this.bonusMax < this.max)
+                        {
+                            if ((this.max - this.min + 1) < (this.numberDraws + this.bonusNumbers))
+                            {
+                                this.Renderer.DisplayGeneralError($"The total amount of numbers (bonus and normal together) in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop);
+                                this.Lotto.KeyChecker.WaitForEnter();
+                                continue;
+                            }
+                            else if ((this.max - this.min + 1) < this.numberAmount)
+                            {
+                                this.Renderer.DisplayGeneralError($"The amount of numbers the user has to choose in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop);
+                                this.Lotto.KeyChecker.WaitForEnter();
+                                continue;
+                            }
+                        }
+                        else if (this.bonusMin < this.max && this.bonusMax > this.max)
+                        {
+                            if ((this.max - this.min + 1) + (this.bonusMax - this.bonusMin + 1) - (this.max - this.bonusMin + 1) < (this.numberDraws + this.bonusNumbers))
+                            {
+                                this.Renderer.DisplayGeneralError($"The total amount of numbers (bonus and normal together) in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop);
+                                this.Lotto.KeyChecker.WaitForEnter();
+                                continue;
+                            }
+                            else if ((this.max - this.min + 1) + (this.bonusMax - this.bonusMin + 1) - (this.max - this.bonusMin + 1) < this.numberAmount)
+                            {
+                                this.Renderer.DisplayGeneralError($"The amount of numbers the user has to choose in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop);
+                                this.Lotto.KeyChecker.WaitForEnter();
+                                continue;
+                            }
+                        }
+                        else if (this.min < this.bonusMax && this.max > this.bonusMax)
+                        {
+                            if ((this.max - this.min + 1) + (this.bonusMax - this.bonusMin + 1) - (this.bonusMax - this.min + 1) < (this.numberDraws + this.bonusNumbers))
+                            {
+                                this.Renderer.DisplayGeneralError($"The total amount of numbers (bonus and normal together) in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop);
+                                this.Lotto.KeyChecker.WaitForEnter();
+                                continue;
+                            }
+                            else if ((this.max - this.min + 1) + (this.bonusMax - this.bonusMin + 1) - (this.bonusMax - this.min + 1) < this.numberAmount)
+                            {
+                                this.Renderer.DisplayGeneralError($"The amount of numbers the user has to choose in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop);
+                                this.Lotto.KeyChecker.WaitForEnter();
+                                continue;
+                            }
+                        }
                     }
 
-                    break;
-                }
-                while (true);
+                    if (this.max - this.min + 1 > 100000)
+                    {
+                        this.Renderer.DisplayGeneralError($"The limits of the numbers are too far apart to be executed correctly. Max range is 100000. Please press enter to continue.", this.offsetLeft, this.offsetTop);
+                        this.Lotto.KeyChecker.WaitForEnter();
+                        continue;
+                    }
+                    else if (this.bonusMax - this.bonusMin + 1 > 100000)
+                    {
+                        this.Renderer.DisplayGeneralError($"The limits of the bonus numbers are too far apart to be executed correctly. Max range is 100000. Please press enter to continue.", this.offsetLeft, this.offsetTop);
+                        this.Lotto.KeyChecker.WaitForEnter();
+                        continue;
+                    }
 
-                if (!this.bonusPool)
-                {
-                    if (this.min == this.bonusMin && this.max == this.bonusMax)
+                    if (this.bonusNumbers > 0)
                     {
-                        if ((this.max - this.min + 1) < (this.numberAmount + this.bonusNumbers))
+                        if ((this.max - this.min + 1) + (this.bonusMax - this.bonusMin + 1) < this.numberAmount)
                         {
-                            this.Renderer.DisplayGeneralError($"The total amount of numbers (bonus and normal together) in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop + 1);
+                            this.Renderer.DisplayGeneralError($"The numbers of the user are too much in this constellation. Please press enter to continue.", this.offsetLeft, this.offsetTop);
                             this.Lotto.KeyChecker.WaitForEnter();
-                        }
-                        else if ((this.max - this.min + 1) < this.numberDraws)
-                        {
-                            this.Renderer.DisplayGeneralError($"The amount of numbers the user has to choose in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop + 1);
-                            this.Lotto.KeyChecker.WaitForEnter();
+                            continue;
                         }
                     }
-                    else if (this.min > this.bonusMin && this.max < this.bonusMax)
+                    else if (this.bonusNumbers <= 0)
                     {
-                        if ((this.bonusMax - this.bonusMin + 1) < (this.numberAmount + this.bonusNumbers))
+                        if ((this.max - this.min + 1) < this.numberAmount)
                         {
-                            this.Renderer.DisplayGeneralError($"The total amount of numbers (bonus and normal together) in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop + 1);
+                            this.Renderer.DisplayGeneralError($"The numbers of the user are too much in this constellation. Please press enter to continue.", this.offsetLeft, this.offsetTop);
                             this.Lotto.KeyChecker.WaitForEnter();
-                        }
-                        else if ((this.bonusMax - this.bonusMin + 1) < this.numberDraws)
-                        {
-                            this.Renderer.DisplayGeneralError($"The amount of numbers the user has to choose in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop + 1);
-                            this.Lotto.KeyChecker.WaitForEnter();
-                        }
-                    }
-                    else if (this.bonusMin > this.min && this.bonusMax < this.max)
-                    {
-                        if ((this.max - this.min + 1) < (this.numberAmount + this.bonusNumbers))
-                        {
-                            this.Renderer.DisplayGeneralError($"The total amount of numbers (bonus and normal together) in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop + 1);
-                            this.Lotto.KeyChecker.WaitForEnter();
-                        }
-                        else if ((this.max - this.min + 1) < this.numberDraws)
-                        {
-                            this.Renderer.DisplayGeneralError($"The amount of numbers the user has to choose in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop + 1);
-                            this.Lotto.KeyChecker.WaitForEnter();
-                        }
-                    }
-                    else if (this.bonusMin < this.max && this.bonusMax > this.max)
-                    {
-                        if ((this.max - this.min + 1) + (this.bonusMax - this.bonusMin + 1) - (this.max - this.bonusMin + 1) < (this.numberAmount + this.bonusNumbers))
-                        {
-                            this.Renderer.DisplayGeneralError($"The total amount of numbers (bonus and normal together) in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop + 1);
-                            this.Lotto.KeyChecker.WaitForEnter();
-                        }
-                        else if ((this.max - this.min + 1) + (this.bonusMax - this.bonusMin + 1) - (this.max - this.bonusMin + 1) < this.numberDraws)
-                        {
-                            this.Renderer.DisplayGeneralError($"The amount of numbers the user has to choose in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop + 1);
-                            this.Lotto.KeyChecker.WaitForEnter();
-                        }
-                    }
-                    else if (this.min < this.bonusMax && this.max > this.bonusMax)
-                    {
-                        if ((this.max - this.min + 1) + (this.bonusMax - this.bonusMin + 1) - (this.bonusMax - this.min + 1) < (this.numberAmount + this.bonusNumbers))
-                        {
-                            this.Renderer.DisplayGeneralError($"The total amount of numbers (bonus and normal together) in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop + 1);
-                            this.Lotto.KeyChecker.WaitForEnter();
-                        }
-                        else if ((this.max - this.min + 1) + (this.bonusMax - this.bonusMin + 1) - (this.bonusMax - this.min + 1) < this.numberDraws)
-                        {
-                            this.Renderer.DisplayGeneralError($"The amount of numbers the user has to choose in this constellation is too high. Please press enter to continue.", this.offsetLeft, this.offsetTop + 1);
-                            this.Lotto.KeyChecker.WaitForEnter();
+                            continue;
                         }
                     }
                     else
@@ -279,12 +334,16 @@ namespace Lottery_Simulator_3
                         break;
                     }
                 }
+                while (true);
 
-                break;
+                this.Lotto.NumberSystems.Add(new NumberSystem(this.numberAmount, this.numberDraws, this.min, this.max, this.bonusNumbers, this.bonusMin, this.bonusMax, this.bonusPool));
             }
-            while (true);
-
-            this.Lotto.NumberSystems.Add(new NumberSystem(this.numberDraws, this.numberAmount, this.min, this.max, this.bonusNumbers, this.bonusMin, this.bonusMax, this.bonusPool));
+            else
+            {
+                this.Render.DisplayGeneralError("You have too many number systems. Please delete one to add another one, or change one of the systems.", 3, this.Lotto.Modes.Count + 6);
+                this.Render.DisplayGeneralError("Please press enter to continue.", 3, this.Lotto.Modes.Count + 7);
+                this.Lotto.KeyChecker.WaitForEnter();
+            }
         }
     }
 }

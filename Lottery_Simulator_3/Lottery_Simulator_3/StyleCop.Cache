@@ -484,8 +484,8 @@
   <sourcecode name="ApplicationExit.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 14:19:06.270</sourceFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.11.29 21:52:37.201</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -507,8 +507,8 @@
   <sourcecode name="CurrentNumberSystems.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 16:08:41.549</sourceFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.11.29 22:07:27.766</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -530,8 +530,54 @@
   <sourcecode name="CurrentSystem.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
       <sourceFile>2019.11.29 10:29:56.635</sourceFile>
+      <parser>2019.09.26 21:42:59.820</parser>
+      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="CurrentSystemSetter.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019.09.26 21:42:59.820</styleCop>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.12.01 16:07:28.743</sourceFile>
+      <parser>2019.09.26 21:42:59.820</parser>
+      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="DefaultConsoleRenderer.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019.09.26 21:42:59.820</styleCop>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.11.29 17:08:00.999</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -553,8 +599,54 @@
   <sourcecode name="ErrorChecker.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
       <sourceFile>2019.11.29 14:19:06.333</sourceFile>
+      <parser>2019.09.26 21:42:59.820</parser>
+      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="ExecuteableConsoleRenderer.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019.09.26 21:42:59.820</styleCop>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.11.30 13:49:28.054</sourceFile>
+      <parser>2019.09.26 21:42:59.820</parser>
+      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="FrequencyDetermination.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019.09.26 21:42:59.820</styleCop>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.12.01 22:35:40.080</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -576,8 +668,8 @@
   <sourcecode name="GraphicalTip.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 14:19:06.239</sourceFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.12.02 09:24:49.655</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -599,8 +691,8 @@
   <sourcecode name="IEvaluable.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 11:46:08.089</sourceFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.12.01 12:42:27.035</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -622,8 +714,31 @@
   <sourcecode name="IExecuteable.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
       <sourceFile>2019.11.29 11:48:26.444</sourceFile>
+      <parser>2019.09.26 21:42:59.820</parser>
+      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="JackpotSimulation.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019.09.26 21:42:59.820</styleCop>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.12.02 09:16:06.201</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -645,7 +760,7 @@
   <sourcecode name="KeyInputChecker.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
       <sourceFile>2019.11.29 14:10:51.665</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
@@ -668,8 +783,8 @@
   <sourcecode name="Lottery.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 15:59:15.109</sourceFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.11.29 21:51:42.559</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -691,8 +806,31 @@
   <sourcecode name="MainMenu.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 15:59:45.058</sourceFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.11.29 21:59:23.202</sourceFile>
+      <parser>2019.09.26 21:42:59.820</parser>
+      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="ManualTip.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019.09.26 21:42:59.820</styleCop>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.12.01 22:54:43.802</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -714,7 +852,7 @@
   <sourcecode name="Mode.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
       <sourceFile>2019.11.29 14:53:36.241</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
@@ -737,8 +875,8 @@
   <sourcecode name="NumbersChecker.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 15:13:16.134</sourceFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.11.29 21:28:46.499</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -760,8 +898,31 @@
   <sourcecode name="NumberSystem.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
       <sourceFile>2019.11.29 15:21:46.271</sourceFile>
+      <parser>2019.09.26 21:42:59.820</parser>
+      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="NumberSystemDeletion.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019.09.26 21:42:59.820</styleCop>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.11.29 22:18:16.287</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -783,8 +944,8 @@
   <sourcecode name="NumberSystemsMenu.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 16:00:14.190</sourceFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.11.29 21:59:17.852</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -806,7 +967,7 @@
   <sourcecode name="OptionsConsoleRenderer.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
       <sourceFile>2019.11.29 16:12:13.706</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
@@ -829,8 +990,8 @@
   <sourcecode name="OptionsMenu.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 16:06:18.009</sourceFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.11.29 21:59:19.510</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -852,7 +1013,7 @@
   <sourcecode name="Program.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
       <sourceFile>2019.11.29 10:20:56.949</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
@@ -875,54 +1036,8 @@
   <sourcecode name="AssemblyInfo.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
       <sourceFile>2019.11.29 16:12:45.762</sourceFile>
-      <parser>2019.09.26 21:42:59.820</parser>
-      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations />
-  </sourcecode>
-  <sourcecode name="RandomNumbersGenerator.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 16:28:18.332</sourceFile>
-      <parser>2019.09.26 21:42:59.820</parser>
-      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations />
-  </sourcecode>
-  <sourcecode name="ManualTip.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 16:41:44.017</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -944,8 +1059,8 @@
   <sourcecode name="QuickTip.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 16:41:44.008</sourceFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.12.01 15:32:55.680</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -964,149 +1079,11 @@
     </timestamps>
     <violations />
   </sourcecode>
-  <sourcecode name="CurrentSystemSetter.cs" parser="StyleCop.CSharp.CsParser">
+  <sourcecode name="RandomNumbersGenerator.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 17:06:58.460</sourceFile>
-      <parser>2019.09.26 21:42:59.820</parser>
-      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations />
-  </sourcecode>
-  <sourcecode name="DefaultConsoleRenderer.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 17:08:00.999</sourceFile>
-      <parser>2019.09.26 21:42:59.820</parser>
-      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations />
-  </sourcecode>
-  <sourcecode name="FrequencyDetermination.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 16:52:34.747</sourceFile>
-      <parser>2019.09.26 21:42:59.820</parser>
-      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations />
-  </sourcecode>
-  <sourcecode name="NumberSystemAdder.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 17:03:48.524</sourceFile>
-      <parser>2019.09.26 21:42:59.820</parser>
-      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations />
-  </sourcecode>
-  <sourcecode name="NumberSystemChanger.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 17:06:58.450</sourceFile>
-      <parser>2019.09.26 21:42:59.820</parser>
-      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations />
-  </sourcecode>
-  <sourcecode name="NumberSystemDeletion.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 17:06:58.441</sourceFile>
-      <parser>2019.09.26 21:42:59.820</parser>
-      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations />
-  </sourcecode>
-  <sourcecode name="ExecuteableConsoleRenderer.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 17:13:09.754</sourceFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.12.01 22:56:46.177</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -1128,11 +1105,34 @@
   <project key="475953188">
     <configuration>DEBUG;TRACE</configuration>
   </project>
-  <sourcecode name="JackpotSimulation.cs" parser="StyleCop.CSharp.CsParser">
+  <sourcecode name="NumberSystemAdder.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019.09.26 21:42:59.820</styleCop>
-      <settingsFile>2019.11.29 14:01:24.194</settingsFile>
-      <sourceFile>2019.11.29 17:13:59.078</sourceFile>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.12.02 18:38:57.594</sourceFile>
+      <parser>2019.09.26 21:42:59.820</parser>
+      <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2019.09.26 21:42:59.820</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2019.09.26 21:42:59.820</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2019.09.26 21:42:59.820</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="NumberSystemChanger.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019.09.26 21:42:59.820</styleCop>
+      <settingsFile>2019.12.02 18:33:58.287</settingsFile>
+      <sourceFile>2019.12.02 18:38:57.604</sourceFile>
       <parser>2019.09.26 21:42:59.820</parser>
       <StyleCop.CSharp.DocumentationRules>2019.09.26 21:42:59.820</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1207956160</StyleCop.CSharp.DocumentationRules.FilesHashCode>

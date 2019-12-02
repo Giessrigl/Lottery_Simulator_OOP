@@ -64,7 +64,7 @@ namespace Lottery_Simulator_3
             int min = (limit1 < limit2) ? limit1 : limit2;
             int max = (limit1 > limit2) ? limit1 : limit2;
 
-            return !(number < min || number > max);
+            return number >= min && number <= max;
         }
 
         /// <summary>

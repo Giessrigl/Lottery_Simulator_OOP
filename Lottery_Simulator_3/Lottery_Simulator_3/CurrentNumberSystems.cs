@@ -41,7 +41,7 @@ namespace Lottery_Simulator_3
         /// </summary>
         public override void Execute()
         {
-            this.Renderer.SetConsoleSettings(90, 35);
+            this.Renderer.SetConsoleSettings(150, this.Lotto.NumberSystems.Count + 10);
             this.Renderer.DisplayHeader(this.Title, 3, 1);
 
             this.Renderer.DisplayNumberSystems(this.Lotto.NumberSystems, 5, 4);

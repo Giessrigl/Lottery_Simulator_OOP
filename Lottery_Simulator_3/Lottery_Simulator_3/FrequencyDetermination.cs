@@ -64,7 +64,7 @@ namespace Lottery_Simulator_3
         /// </summary>
         public override void Execute()
         {
-            this.Lotto.Renderer.SetConsoleSettings(90, 45);
+            this.Lotto.Renderer.SetConsoleSettings(65, 20);
             this.Lotto.Renderer.DisplayHeader(this.Title, this.offsetLeft, this.offsetTop - 4);
 
             this.PerformPreEvaluation();
@@ -77,15 +77,15 @@ namespace Lottery_Simulator_3
         public void PerformPreEvaluation()
         {
             this.iterations = this.Lotto.ErrorChecker.EvaluateNumberErrors("Type in the amount of iterations: ", 1, int.MaxValue, this.offsetLeft, this.offsetTop);
-            this.Render.OverwriteBlank(90, 0, this.offsetTop);
+            this.Render.OverwriteBlank(55, 0, this.offsetTop);
 
             this.numbersAmount = this.Lotto.ActualSystem.Max - this.Lotto.ActualSystem.Min + 1;
             this.allNumbers = new int[this.numbersAmount];
-            this.frequenciesNumbers = new int[this.numbersAmount];
+            this.frequenciesNumbers = new int[this.Lotto.ActualSystem.Max - this.Lotto.ActualSystem.Min + 1];
 
-            for (int i = 0; i < this.numbersAmount; i++)
+            for (int i = this.Lotto.ActualSystem.Min; i <= this.Lotto.ActualSystem.Max; i++)
             {
-                this.allNumbers[i] = i + 1;
+                this.allNumbers[i - this.Lotto.ActualSystem.Min] = i;
             }
         }
 
@@ -97,6 +97,7 @@ namespace Lottery_Simulator_3
             double currentIteration = 1.0;
             int highestNumberFrequence = 0;
             int numberFrequence;
+            int[] iterationBonusNumbers = new int[0];
 
             do
             {
@@ -104,11 +105,15 @@ namespace Lottery_Simulator_3
 
                 this.Render.DisplayFrequencyStatus(int.Parse(currentIteration.ToString()), this.iterations, percentage, this.offsetLeft, this.offsetTop);
 
-                int[] iterationNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberAmount, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max);
-                int[] iterationBonusNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax);
+                int[] iterationNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.NumberDraws, this.Lotto.ActualSystem.Min, this.Lotto.ActualSystem.Max);
+                if (this.Lotto.ActualSystem.BonusPool && this.Lotto.ActualSystem.BonusNumberAmount > 0)
+                {
+                    iterationBonusNumbers = this.Lotto.NumberGen.GenerateUniquesInRange(this.Lotto.ActualSystem.BonusNumberAmount, this.Lotto.ActualSystem.BonusNumberMin, this.Lotto.ActualSystem.BonusNumberMax);
+                }
+                
                 for (int i = 0; i < iterationNumbers.Length; i++)
                 {
-                    this.frequenciesNumbers[iterationNumbers[i] - 1]++;
+                    this.frequenciesNumbers[iterationNumbers[i] - this.Lotto.ActualSystem.Min]++;
                 }
 
                 if (this.Lotto.ActualSystem.BonusPool)
@@ -117,7 +122,7 @@ namespace Lottery_Simulator_3
                     {
                         if (iterationBonusNumbers[i] - 1 > this.Lotto.ActualSystem.Min && iterationBonusNumbers[i] - 1 < this.Lotto.ActualSystem.Max)
                         {
-                            this.frequenciesNumbers[iterationBonusNumbers[i] - 1]++;
+                            this.frequenciesNumbers[iterationBonusNumbers[i] - this.Lotto.ActualSystem.Min]++;
                         }
                     }
                 }
@@ -167,6 +172,24 @@ namespace Lottery_Simulator_3
                         if (numberIndex < this.numbersAmount - 1)
                         {
                             numberIndex++;
+                            numberFrequence = (this.frequenciesNumbers[numberIndex] * 16) / highestNumberFrequence;
+                            this.Render.DisplayFrequencyCell(this.allNumbers[numberIndex].ToString(), numberFrequence, this.offsetLeft, this.offsetTop + 2);
+                        }
+
+                        break;
+                    case ConsoleKey.UpArrow:
+                        if (numberIndex >= 10 && this.allNumbers.Length > 10)
+                        {
+                            numberIndex -= 10;
+                            numberFrequence = (this.frequenciesNumbers[numberIndex] * 16) / highestNumberFrequence;
+                            this.Render.DisplayFrequencyCell(this.allNumbers[numberIndex].ToString(), numberFrequence, this.offsetLeft, this.offsetTop + 2);
+                        }
+
+                        break;
+                    case ConsoleKey.DownArrow:
+                        if (numberIndex < this.numbersAmount - 10)
+                        {
+                            numberIndex += 10;
                             numberFrequence = (this.frequenciesNumbers[numberIndex] * 16) / highestNumberFrequence;
                             this.Render.DisplayFrequencyCell(this.allNumbers[numberIndex].ToString(), numberFrequence, this.offsetLeft, this.offsetTop + 2);
                         }

@@ -71,6 +71,12 @@ namespace Lottery_Simulator_3
                 }
                 while (true);
             }
+            else
+            {
+                this.Render.DisplayGeneralError("There is only one system available at the moment.", 3, this.Lotto.Modes.Count + 6);
+                this.Render.DisplayGeneralError("Please press enter to continue.", 3, this.Lotto.Modes.Count + 7);
+                this.Lotto.KeyChecker.WaitForEnter();
+            }
         }
     }
 }

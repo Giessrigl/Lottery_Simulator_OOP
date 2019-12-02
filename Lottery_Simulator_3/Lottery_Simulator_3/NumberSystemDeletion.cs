@@ -46,7 +46,7 @@ namespace Lottery_Simulator_3
         {
             if (this.Lotto.NumberSystems.Count > 1)
             {
-                this.Render.SetConsoleSettings(150, 35);
+                this.Render.SetConsoleSettings(150, this.Lotto.NumberSystems.Count + 10);
                 this.Render.DisplayHeader(this.Title, 3, 1);
                 this.Renderer.DisplayNumberSystems(this.Lotto.NumberSystems, 5, 5);
 
@@ -72,6 +72,12 @@ namespace Lottery_Simulator_3
                     }
                 }
                 while (true);
+            }
+            else
+            {
+                this.Render.DisplayGeneralError("There is only one system available. It can not be deleted.", 3, this.Lotto.Modes.Count + 6);
+                this.Render.DisplayGeneralError("Press enter to continue.", 3, this.Lotto.Modes.Count + 7);
+                this.Lotto.KeyChecker.WaitForEnter();
             }
         }
     }
